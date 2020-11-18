@@ -1,0 +1,31 @@
+@import "src/sass/general"
+
+*, a
+  color: $f-color
+
+hr
+  margin: 15px 0
+
+h2
+  font-size: 1.5rem
+  display: inline-block
+  padding: 0 10px
+  margin: 0
+  &:first-of-type
+    border-right: 1px solid $f-color
+    padding-left: 0
+
+
+
+nav
+  margin-bottom: 30px
+  a
+    color: $black
+    font-size: 1.2rem
+    padding: 0 10px
+    &:nth-last-of-type(n+2)
+      border-right: 1px solid $f-color
+    &:first-of-type
+      padding-left: 0
+  .active
+    font-weight: bolder

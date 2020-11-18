@@ -1,0 +1,16 @@
+<div class="bar-chart">
+  <canvas baseChart
+          [datasets]="chartData"
+          [labels]="chartLabels"
+          [options]="barChartOptions"
+
+          [legend]="barChartLegend"
+          [chartType]="chartType">
+  </canvas>
+  <div class="type-chart-block d-flex flex-column">
+    <div class="btn" (click)="refresh()"><i class="fas fa-redo-alt"></i></div>
+    <div class="btn" (click)="changeChartType('bar')"><i class="fas fa-chart-bar"></i></div>
+    <div class="btn" (click)="changeChartType('line')"><i class="fas fa-chart-area"></i></div>
+    <div class="btn" (click)="changeChartType('pie')"><i class="fas fa-chart-pie"></i></div>
+  </div>
+</div>

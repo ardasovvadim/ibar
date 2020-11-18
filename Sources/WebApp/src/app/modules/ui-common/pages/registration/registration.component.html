@@ -1,0 +1,52 @@
+<div class="login-block mat-elevation-z3">
+
+  <img src="img/mexem_logo.svg" class="logo" alt="">
+  <p>Set password</p>
+
+  <form #formElRef [formGroup]="form" class="custom-form-block state-matcher" autocomplete="off" (ngSubmit)="finishRegistration()">
+
+    <mat-form-field class="mat-form-field blue-form-field suffix-align-center" appearance="outline">
+      <mat-label>Password</mat-label>
+      <input matInput formControlName="password" [type]="hidePassword ? 'password' : 'text'" class="mat-input"
+             placeholder="Enter password">
+      <button mat-icon-button matSuffix (mousedown)="hidePassword = false" (mouseup)="hidePassword = true">
+        <i class="fas fa-eye" *ngIf="!hidePassword"></i>
+        <i class="fas fa-eye-slash" *ngIf="hidePassword"></i>
+      </button>
+    </mat-form-field>
+    <app-state-model-errors [form]="form"
+                            [submitted]="isSubmitted"
+                            [customErrors]="[
+                              {error: 'required', message: 'Required'},
+                              {error: 'pattern', message: 'Password should be minimum 9 symbols including: one capital letter, one digit and one special symbol'}
+                            ]"
+                            controlName="password"
+                            [modelState]="modelState">
+    </app-state-model-errors>
+
+    <mat-form-field class="mat-form-field blue-form-field suffix-align-center" appearance="outline">
+      <mat-label>Confirm password</mat-label>
+      <input matInput formControlName="confirmPassword" [type]="hideConfirmPassword ? 'password' : 'text'" class="mat-input"
+             placeholder="Enter password">
+      <button mat-icon-button matSuffix (mousedown)="hideConfirmPassword = false" (mouseup)="hideConfirmPassword = true">
+        <i class="fas fa-eye" *ngIf="!hideConfirmPassword"></i>
+        <i class="fas fa-eye-slash" *ngIf="hideConfirmPassword"></i>
+      </button>
+    </mat-form-field>
+    <app-state-model-errors [form]="form"
+                            [submitted]="isSubmitted"
+                            [customErrors]="[
+                              {error: 'required', message: 'Required'},
+                              {error: 'invalidConfirmPassword', message: 'Password mismatch'}
+                            ]"
+                            controlName="confirmPassword"
+                            [modelState]="modelState">
+      <p class="error-message" *ngIf="errorMessage !== ''">{{errorMessage}}</p>
+    </app-state-model-errors>
+
+
+    <button type="submit" mat-button class="btn--blue">Finish registration</button>
+
+  </form>
+
+</div>

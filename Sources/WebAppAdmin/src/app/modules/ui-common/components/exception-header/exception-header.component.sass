@@ -1,0 +1,23 @@
+@import "properties"
+
+.exception-container
+  position: relative
+  background: $red
+  margin: 0 -15px
+  padding: 15px
+  p
+    margin: 0
+    color: white
+    &:not(:last-of-type)
+      margin-bottom: .5rem
+  .btns-group
+    position: absolute
+    padding-right: 15px
+    top: 15px
+    right: 15px
+    .btn
+      color: $white
+      opacity: .7
+      font-size: 1rem
+      &:not(:last-of-type)
+        margin-right: 10px

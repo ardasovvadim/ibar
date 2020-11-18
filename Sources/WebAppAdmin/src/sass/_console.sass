@@ -1,0 +1,58 @@
+$radius: 5px
+
+mat-card.console
+  background: #2B2B2B
+  padding: 0
+  >div
+    padding: 15px
+  .top
+    display: flex
+    border-top-left-radius: $radius
+    border-top-right-radius: $radius
+    background: #3C3F41
+    align-items: stretch
+    .separator
+      background: red
+      border-right: 1px solid #515151
+      margin: 0 15px
+    .btn
+      transition: background-color .1s
+      padding: 5px 7px
+      border-radius: 3px
+      &[disabled]
+        opacity: .5
+    .btn:hover:not([disabled])
+      background-color: #4C5052
+    .btn:active:not([disabled])
+      background-color: #5C6164
+    .btn--green i
+      color: #669653
+    .btn--red i
+      color: #BA574E
+  p
+    margin: 0
+    font-family: $f-monospace
+    color: #BBBBBB
+  .output
+    overflow-y: auto
+    height: 450px
+    border-bottom-left-radius: $radius
+    border-bottom-right-radius: $radius
+    .line>p
+      display: inline-block
+      &:not(:last-of-type)
+        margin-right: 10px
+    .line:not(:last-of-type)
+      margin-bottom: 10px
+    .line-body
+      word-wrap: break-word
+    &::-webkit-scrollbar
+      display: block
+    //background: pink
+    &::-webkit-scrollbar-button
+      display: none
+    &::-webkit-scrollbar-track
+      border-top: 1px solid #2B2B2B
+      background: #3C3F41
+    &::-webkit-scrollbar-thumb
+      background: #595B5D

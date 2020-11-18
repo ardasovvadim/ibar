@@ -1,0 +1,816 @@
+2020-06-03 14:30:20.3346|ERROR| ----------------------------------------------------------------------------------------------------
+URI: /api/admin/user/login
+CONTROLLER NAME: Admin
+ACTION NAME: Login
+PARAMS:
+PARAM NAME: userModel | PARAM VALUE: IBAR.TradeModel.Business.ViewModels.LoginModel
+EXCEPTION
+MESSAGE: The entity type 'IBAR.TradeModel.Data.Entities.MasterAccount' on which the navigation property 'UpdatedBy' is declared is not a base type for the type 'IBAR.TradeModel.Data.Entities.TradeAccountNote' referred to by the inverse navigation property 'UpdatedMasterAccounts'. 
+STACKTRACE:    at System.Data.Entity.ModelConfiguration.Configuration.Properties.Navigation.ConventionNavigationPropertyConfiguration.HasInverseNavigationProperty(Func`2 inverseNavigationPropertyGetter)
+   at System.Data.Entity.ModelConfiguration.Conventions.InversePropertyAttributeConvention.Apply(PropertyInfo memberInfo, ConventionTypeConfiguration configuration, InversePropertyAttribute attribute)
+   at System.Data.Entity.ModelConfiguration.Conventions.PropertyAttributeConfigurationConvention`1.<.ctor>b__1_0(ConventionTypeConfiguration ec)
+   at System.Data.Entity.ModelConfiguration.Conventions.TypeConvention.ApplyCore(Type memberInfo, Func`1 configuration, ModelConfiguration modelConfiguration)
+   at System.Data.Entity.ModelConfiguration.Conventions.TypeConventionBase.Apply(Type memberInfo, Func`1 configuration, ModelConfiguration modelConfiguration)
+   at System.Data.Entity.ModelConfiguration.Configuration.ConventionsConfiguration.ApplyTypeConfiguration[TStructuralTypeConfiguration](Type type, Func`1 structuralTypeConfiguration, ModelConfiguration modelConfiguration)
+   at System.Data.Entity.ModelConfiguration.Conventions.Convention.ApplyTypeConfiguration[TStructuralTypeConfiguration](Type type, Func`1 structuralTypeConfiguration, ModelConfiguration modelConfiguration)
+   at System.Data.Entity.ModelConfiguration.Configuration.ConventionsConfiguration.ApplyTypeConfiguration[TStructuralTypeConfiguration](Type type, Func`1 structuralTypeConfiguration, ModelConfiguration modelConfiguration)
+   at System.Data.Entity.ModelConfiguration.Mappers.TypeMapper.MapEntityType(Type type)
+   at System.Data.Entity.ModelConfiguration.Mappers.NavigationPropertyMapper.Map(PropertyInfo propertyInfo, EntityType entityType, Func`1 entityTypeConfiguration)
+   at System.Data.Entity.ModelConfiguration.Mappers.TypeMapper.MapEntityType(Type type)
+   at System.Data.Entity.ModelConfiguration.Mappers.NavigationPropertyMapper.Map(PropertyInfo propertyInfo, EntityType entityType, Func`1 entityTypeConfiguration)
+   at System.Data.Entity.ModelConfiguration.Mappers.TypeMapper.MapEntityType(Type type)
+   at System.Data.Entity.DbModelBuilder.MapTypes(EdmModel model)
+   at System.Data.Entity.DbModelBuilder.Build(DbProviderManifest providerManifest, DbProviderInfo providerInfo)
+   at System.Data.Entity.DbModelBuilder.Build(DbConnection providerConnection)
+   at System.Data.Entity.Internal.LazyInternalContext.CreateModel(LazyInternalContext internalContext)
+   at System.Data.Entity.Internal.RetryLazy`2.GetValue(TInput input)
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   at System.Data.Entity.Internal.InternalContext.Initialize()
+   at System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Include(String path)
+   at System.Data.Entity.Infrastructure.DbQuery`1.Include(String path)
+   at System.Data.Entity.QueryableExtensions.Include[T](IQueryable`1 source, String path)
+   at System.Data.Entity.QueryableExtensions.Include[T,TProperty](IQueryable`1 source, Expression`1 path)
+   at IBAR.TradeModel.Data.Repositories.UserRepository.GetByEmail(String email) in C:\Users\vadima\Documents\DevEnv\Workspaces\ibreportingsystem\Sources\WebApi\DataLayer\IBAR.TradeModel.Data\Repositories\IUserRepository.cs:line 32
+   at IBAR.TradeModel.Business.Services.AuthenticationService.LoginAs(LoginModel modelParam, String roleName) in C:\Users\vadima\Documents\DevEnv\Workspaces\ibreportingsystem\Sources\WebApi\BusinessLayer\IBAR.TradeModel.Business\Services\IAuthenticationService.cs:line 42
+   at IBAR.Api.Controllers.AdminController.Login(LoginModel userModel) in C:\Users\vadima\Documents\DevEnv\Workspaces\ibreportingsystem\Sources\WebApi\IBAR.Api\Controllers\Admin\AdminController.cs:line 36
+   at lambda_method(Closure , Object , Object[] )
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass6_2.<GetExecutor>b__2(Object instance, Object[] methodParameters)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Autofac.Integration.WebApi.AutofacActionFilterAdapter.<CallOnActionExecutedAsync>d__3.MoveNext() in C:\projects\autofac-webapi\src\Autofac.Integration.WebApi\AutofacActionFilterAdapter.cs:line 83
+--- End of stack trace from previous location where exception was thrown ---
+   at Autofac.Integration.WebApi.AutofacActionFilterAdapter.<CallOnActionExecutedAsync>d__3.MoveNext() in C:\projects\autofac-webapi\src\Autofac.Integration.WebApi\AutofacActionFilterAdapter.cs:line 129
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Autofac.Integration.WebApi.AutofacActionFilterAdapter.<ExecuteActionFilterAsync>d__2.MoveNext() in C:\projects\autofac-webapi\src\Autofac.Integration.WebApi\AutofacActionFilterAdapter.cs:line 66
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Filters.AuthorizationFilterAttribute.<ExecuteAuthorizationFilterAsyncCore>d__3.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.AuthenticationFilterResult.<ExecuteAsync>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__6.MoveNext() 
+
+----------------------------------------------------------------------------------------------------
+
+2020-06-03 14:31:42.0541|ERROR| ----------------------------------------------------------------------------------------------------
+URI: /api/admin/user/login
+CONTROLLER NAME: Admin
+ACTION NAME: Login
+PARAMS:
+PARAM NAME: userModel | PARAM VALUE: IBAR.TradeModel.Business.ViewModels.LoginModel
+EXCEPTION
+MESSAGE: The entity type 'IBAR.TradeModel.Data.Entities.MasterAccount' on which the navigation property 'UpdatedBy' is declared is not a base type for the type 'IBAR.TradeModel.Data.Entities.TradeAccountNote' referred to by the inverse navigation property 'UpdatedMasterAccounts'. 
+STACKTRACE:    at System.Data.Entity.ModelConfiguration.Configuration.Properties.Navigation.ConventionNavigationPropertyConfiguration.HasInverseNavigationProperty(Func`2 inverseNavigationPropertyGetter)
+   at System.Data.Entity.ModelConfiguration.Conventions.InversePropertyAttributeConvention.Apply(PropertyInfo memberInfo, ConventionTypeConfiguration configuration, InversePropertyAttribute attribute)
+   at System.Data.Entity.ModelConfiguration.Conventions.PropertyAttributeConfigurationConvention`1.<.ctor>b__1_0(ConventionTypeConfiguration ec)
+   at System.Data.Entity.ModelConfiguration.Conventions.TypeConvention.ApplyCore(Type memberInfo, Func`1 configuration, ModelConfiguration modelConfiguration)
+   at System.Data.Entity.ModelConfiguration.Conventions.TypeConventionBase.Apply(Type memberInfo, Func`1 configuration, ModelConfiguration modelConfiguration)
+   at System.Data.Entity.ModelConfiguration.Configuration.ConventionsConfiguration.ApplyTypeConfiguration[TStructuralTypeConfiguration](Type type, Func`1 structuralTypeConfiguration, ModelConfiguration modelConfiguration)
+   at System.Data.Entity.ModelConfiguration.Conventions.Convention.ApplyTypeConfiguration[TStructuralTypeConfiguration](Type type, Func`1 structuralTypeConfiguration, ModelConfiguration modelConfiguration)
+   at System.Data.Entity.ModelConfiguration.Configuration.ConventionsConfiguration.ApplyTypeConfiguration[TStructuralTypeConfiguration](Type type, Func`1 structuralTypeConfiguration, ModelConfiguration modelConfiguration)
+   at System.Data.Entity.ModelConfiguration.Mappers.TypeMapper.MapEntityType(Type type)
+   at System.Data.Entity.ModelConfiguration.Mappers.NavigationPropertyMapper.Map(PropertyInfo propertyInfo, EntityType entityType, Func`1 entityTypeConfiguration)
+   at System.Data.Entity.ModelConfiguration.Mappers.TypeMapper.MapEntityType(Type type)
+   at System.Data.Entity.ModelConfiguration.Mappers.NavigationPropertyMapper.Map(PropertyInfo propertyInfo, EntityType entityType, Func`1 entityTypeConfiguration)
+   at System.Data.Entity.ModelConfiguration.Mappers.TypeMapper.MapEntityType(Type type)
+   at System.Data.Entity.DbModelBuilder.MapTypes(EdmModel model)
+   at System.Data.Entity.DbModelBuilder.Build(DbProviderManifest providerManifest, DbProviderInfo providerInfo)
+   at System.Data.Entity.DbModelBuilder.Build(DbConnection providerConnection)
+   at System.Data.Entity.Internal.LazyInternalContext.CreateModel(LazyInternalContext internalContext)
+   at System.Data.Entity.Internal.RetryLazy`2.GetValue(TInput input)
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   at System.Data.Entity.Internal.InternalContext.Initialize()
+   at System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Include(String path)
+   at System.Data.Entity.Infrastructure.DbQuery`1.Include(String path)
+   at System.Data.Entity.QueryableExtensions.Include[T](IQueryable`1 source, String path)
+   at System.Data.Entity.QueryableExtensions.Include[T,TProperty](IQueryable`1 source, Expression`1 path)
+   at IBAR.TradeModel.Data.Repositories.UserRepository.GetByEmail(String email) in C:\Users\vadima\Documents\DevEnv\Workspaces\ibreportingsystem\Sources\WebApi\DataLayer\IBAR.TradeModel.Data\Repositories\IUserRepository.cs:line 32
+   at IBAR.TradeModel.Business.Services.AuthenticationService.LoginAs(LoginModel modelParam, String roleName) in C:\Users\vadima\Documents\DevEnv\Workspaces\ibreportingsystem\Sources\WebApi\BusinessLayer\IBAR.TradeModel.Business\Services\IAuthenticationService.cs:line 42
+   at IBAR.Api.Controllers.AdminController.Login(LoginModel userModel) in C:\Users\vadima\Documents\DevEnv\Workspaces\ibreportingsystem\Sources\WebApi\IBAR.Api\Controllers\Admin\AdminController.cs:line 36
+   at lambda_method(Closure , Object , Object[] )
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass6_2.<GetExecutor>b__2(Object instance, Object[] methodParameters)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Autofac.Integration.WebApi.AutofacActionFilterAdapter.<CallOnActionExecutedAsync>d__3.MoveNext() in C:\projects\autofac-webapi\src\Autofac.Integration.WebApi\AutofacActionFilterAdapter.cs:line 83
+--- End of stack trace from previous location where exception was thrown ---
+   at Autofac.Integration.WebApi.AutofacActionFilterAdapter.<CallOnActionExecutedAsync>d__3.MoveNext() in C:\projects\autofac-webapi\src\Autofac.Integration.WebApi\AutofacActionFilterAdapter.cs:line 129
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Autofac.Integration.WebApi.AutofacActionFilterAdapter.<ExecuteActionFilterAsync>d__2.MoveNext() in C:\projects\autofac-webapi\src\Autofac.Integration.WebApi\AutofacActionFilterAdapter.cs:line 66
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Filters.AuthorizationFilterAttribute.<ExecuteAuthorizationFilterAsyncCore>d__3.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.AuthenticationFilterResult.<ExecuteAsync>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__6.MoveNext() 
+
+----------------------------------------------------------------------------------------------------
+
+2020-06-03 14:50:17.7661|ERROR| ----------------------------------------------------------------------------------------------------
+URI: /api/admin/user/login
+CONTROLLER NAME: Admin
+ACTION NAME: Login
+PARAMS:
+PARAM NAME: userModel | PARAM VALUE: IBAR.TradeModel.Business.ViewModels.LoginModel
+EXCEPTION
+MESSAGE: The entity type 'IBAR.TradeModel.Data.Entities.MasterAccount' on which the navigation property 'UpdatedBy' is declared is not a base type for the type 'IBAR.TradeModel.Data.Entities.TradeAccountNote' referred to by the inverse navigation property 'UpdatedMasterAccounts'. 
+STACKTRACE:    at System.Data.Entity.ModelConfiguration.Configuration.Properties.Navigation.ConventionNavigationPropertyConfiguration.HasInverseNavigationProperty(Func`2 inverseNavigationPropertyGetter)
+   at System.Data.Entity.ModelConfiguration.Conventions.InversePropertyAttributeConvention.Apply(PropertyInfo memberInfo, ConventionTypeConfiguration configuration, InversePropertyAttribute attribute)
+   at System.Data.Entity.ModelConfiguration.Conventions.PropertyAttributeConfigurationConvention`1.<.ctor>b__1_0(ConventionTypeConfiguration ec)
+   at System.Data.Entity.ModelConfiguration.Conventions.TypeConvention.ApplyCore(Type memberInfo, Func`1 configuration, ModelConfiguration modelConfiguration)
+   at System.Data.Entity.ModelConfiguration.Conventions.TypeConventionBase.Apply(Type memberInfo, Func`1 configuration, ModelConfiguration modelConfiguration)
+   at System.Data.Entity.ModelConfiguration.Configuration.ConventionsConfiguration.ApplyTypeConfiguration[TStructuralTypeConfiguration](Type type, Func`1 structuralTypeConfiguration, ModelConfiguration modelConfiguration)
+   at System.Data.Entity.ModelConfiguration.Conventions.Convention.ApplyTypeConfiguration[TStructuralTypeConfiguration](Type type, Func`1 structuralTypeConfiguration, ModelConfiguration modelConfiguration)
+   at System.Data.Entity.ModelConfiguration.Configuration.ConventionsConfiguration.ApplyTypeConfiguration[TStructuralTypeConfiguration](Type type, Func`1 structuralTypeConfiguration, ModelConfiguration modelConfiguration)
+   at System.Data.Entity.ModelConfiguration.Mappers.TypeMapper.MapEntityType(Type type)
+   at System.Data.Entity.ModelConfiguration.Mappers.NavigationPropertyMapper.Map(PropertyInfo propertyInfo, EntityType entityType, Func`1 entityTypeConfiguration)
+   at System.Data.Entity.ModelConfiguration.Mappers.TypeMapper.MapEntityType(Type type)
+   at System.Data.Entity.ModelConfiguration.Mappers.NavigationPropertyMapper.Map(PropertyInfo propertyInfo, EntityType entityType, Func`1 entityTypeConfiguration)
+   at System.Data.Entity.ModelConfiguration.Mappers.TypeMapper.MapEntityType(Type type)
+   at System.Data.Entity.DbModelBuilder.MapTypes(EdmModel model)
+   at System.Data.Entity.DbModelBuilder.Build(DbProviderManifest providerManifest, DbProviderInfo providerInfo)
+   at System.Data.Entity.DbModelBuilder.Build(DbConnection providerConnection)
+   at System.Data.Entity.Internal.LazyInternalContext.CreateModel(LazyInternalContext internalContext)
+   at System.Data.Entity.Internal.RetryLazy`2.GetValue(TInput input)
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   at System.Data.Entity.Internal.InternalContext.Initialize()
+   at System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Include(String path)
+   at System.Data.Entity.Infrastructure.DbQuery`1.Include(String path)
+   at System.Data.Entity.QueryableExtensions.Include[T](IQueryable`1 source, String path)
+   at System.Data.Entity.QueryableExtensions.Include[T,TProperty](IQueryable`1 source, Expression`1 path)
+   at IBAR.TradeModel.Data.Repositories.UserRepository.GetByEmail(String email) in C:\Users\vadima\Documents\DevEnv\Workspaces\ibreportingsystem\Sources\WebApi\DataLayer\IBAR.TradeModel.Data\Repositories\IUserRepository.cs:line 32
+   at IBAR.TradeModel.Business.Services.AuthenticationService.LoginAs(LoginModel modelParam, String roleName) in C:\Users\vadima\Documents\DevEnv\Workspaces\ibreportingsystem\Sources\WebApi\BusinessLayer\IBAR.TradeModel.Business\Services\IAuthenticationService.cs:line 42
+   at IBAR.Api.Controllers.AdminController.Login(LoginModel userModel) in C:\Users\vadima\Documents\DevEnv\Workspaces\ibreportingsystem\Sources\WebApi\IBAR.Api\Controllers\Admin\AdminController.cs:line 36
+   at lambda_method(Closure , Object , Object[] )
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass6_2.<GetExecutor>b__2(Object instance, Object[] methodParameters)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Autofac.Integration.WebApi.AutofacActionFilterAdapter.<CallOnActionExecutedAsync>d__3.MoveNext() in C:\projects\autofac-webapi\src\Autofac.Integration.WebApi\AutofacActionFilterAdapter.cs:line 83
+--- End of stack trace from previous location where exception was thrown ---
+   at Autofac.Integration.WebApi.AutofacActionFilterAdapter.<CallOnActionExecutedAsync>d__3.MoveNext() in C:\projects\autofac-webapi\src\Autofac.Integration.WebApi\AutofacActionFilterAdapter.cs:line 129
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Autofac.Integration.WebApi.AutofacActionFilterAdapter.<ExecuteActionFilterAsync>d__2.MoveNext() in C:\projects\autofac-webapi\src\Autofac.Integration.WebApi\AutofacActionFilterAdapter.cs:line 66
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Filters.AuthorizationFilterAttribute.<ExecuteAuthorizationFilterAsyncCore>d__3.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.AuthenticationFilterResult.<ExecuteAsync>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__6.MoveNext() 
+
+----------------------------------------------------------------------------------------------------
+
+2020-06-03 14:51:19.9924|ERROR| ----------------------------------------------------------------------------------------------------
+URI: /api/admin/user/login
+CONTROLLER NAME: Admin
+ACTION NAME: Login
+PARAMS:
+PARAM NAME: userModel | PARAM VALUE: IBAR.TradeModel.Business.ViewModels.LoginModel
+EXCEPTION
+MESSAGE: The entity type 'IBAR.TradeModel.Data.Entities.MasterAccount' on which the navigation property 'UpdatedBy' is declared is not a base type for the type 'IBAR.TradeModel.Data.Entities.TradeAccountNote' referred to by the inverse navigation property 'UpdatedMasterAccounts'. 
+STACKTRACE:    at System.Data.Entity.ModelConfiguration.Configuration.Properties.Navigation.ConventionNavigationPropertyConfiguration.HasInverseNavigationProperty(Func`2 inverseNavigationPropertyGetter)
+   at System.Data.Entity.ModelConfiguration.Conventions.InversePropertyAttributeConvention.Apply(PropertyInfo memberInfo, ConventionTypeConfiguration configuration, InversePropertyAttribute attribute)
+   at System.Data.Entity.ModelConfiguration.Conventions.PropertyAttributeConfigurationConvention`1.<.ctor>b__1_0(ConventionTypeConfiguration ec)
+   at System.Data.Entity.ModelConfiguration.Conventions.TypeConvention.ApplyCore(Type memberInfo, Func`1 configuration, ModelConfiguration modelConfiguration)
+   at System.Data.Entity.ModelConfiguration.Conventions.TypeConventionBase.Apply(Type memberInfo, Func`1 configuration, ModelConfiguration modelConfiguration)
+   at System.Data.Entity.ModelConfiguration.Configuration.ConventionsConfiguration.ApplyTypeConfiguration[TStructuralTypeConfiguration](Type type, Func`1 structuralTypeConfiguration, ModelConfiguration modelConfiguration)
+   at System.Data.Entity.ModelConfiguration.Conventions.Convention.ApplyTypeConfiguration[TStructuralTypeConfiguration](Type type, Func`1 structuralTypeConfiguration, ModelConfiguration modelConfiguration)
+   at System.Data.Entity.ModelConfiguration.Configuration.ConventionsConfiguration.ApplyTypeConfiguration[TStructuralTypeConfiguration](Type type, Func`1 structuralTypeConfiguration, ModelConfiguration modelConfiguration)
+   at System.Data.Entity.ModelConfiguration.Mappers.TypeMapper.MapEntityType(Type type)
+   at System.Data.Entity.ModelConfiguration.Mappers.NavigationPropertyMapper.Map(PropertyInfo propertyInfo, EntityType entityType, Func`1 entityTypeConfiguration)
+   at System.Data.Entity.ModelConfiguration.Mappers.TypeMapper.MapEntityType(Type type)
+   at System.Data.Entity.ModelConfiguration.Mappers.NavigationPropertyMapper.Map(PropertyInfo propertyInfo, EntityType entityType, Func`1 entityTypeConfiguration)
+   at System.Data.Entity.ModelConfiguration.Mappers.TypeMapper.MapEntityType(Type type)
+   at System.Data.Entity.DbModelBuilder.MapTypes(EdmModel model)
+   at System.Data.Entity.DbModelBuilder.Build(DbProviderManifest providerManifest, DbProviderInfo providerInfo)
+   at System.Data.Entity.DbModelBuilder.Build(DbConnection providerConnection)
+   at System.Data.Entity.Internal.LazyInternalContext.CreateModel(LazyInternalContext internalContext)
+   at System.Data.Entity.Internal.RetryLazy`2.GetValue(TInput input)
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   at System.Data.Entity.Internal.InternalContext.Initialize()
+   at System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Include(String path)
+   at System.Data.Entity.Infrastructure.DbQuery`1.Include(String path)
+   at System.Data.Entity.QueryableExtensions.Include[T](IQueryable`1 source, String path)
+   at System.Data.Entity.QueryableExtensions.Include[T,TProperty](IQueryable`1 source, Expression`1 path)
+   at IBAR.TradeModel.Data.Repositories.UserRepository.GetByEmail(String email) in C:\Users\vadima\Documents\DevEnv\Workspaces\ibreportingsystem\Sources\WebApi\DataLayer\IBAR.TradeModel.Data\Repositories\IUserRepository.cs:line 32
+   at IBAR.TradeModel.Business.Services.AuthenticationService.LoginAs(LoginModel modelParam, String roleName) in C:\Users\vadima\Documents\DevEnv\Workspaces\ibreportingsystem\Sources\WebApi\BusinessLayer\IBAR.TradeModel.Business\Services\IAuthenticationService.cs:line 42
+   at IBAR.Api.Controllers.AdminController.Login(LoginModel userModel) in C:\Users\vadima\Documents\DevEnv\Workspaces\ibreportingsystem\Sources\WebApi\IBAR.Api\Controllers\Admin\AdminController.cs:line 36
+   at lambda_method(Closure , Object , Object[] )
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass6_2.<GetExecutor>b__2(Object instance, Object[] methodParameters)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Autofac.Integration.WebApi.AutofacActionFilterAdapter.<CallOnActionExecutedAsync>d__3.MoveNext() in C:\projects\autofac-webapi\src\Autofac.Integration.WebApi\AutofacActionFilterAdapter.cs:line 83
+--- End of stack trace from previous location where exception was thrown ---
+   at Autofac.Integration.WebApi.AutofacActionFilterAdapter.<CallOnActionExecutedAsync>d__3.MoveNext() in C:\projects\autofac-webapi\src\Autofac.Integration.WebApi\AutofacActionFilterAdapter.cs:line 129
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Autofac.Integration.WebApi.AutofacActionFilterAdapter.<ExecuteActionFilterAsync>d__2.MoveNext() in C:\projects\autofac-webapi\src\Autofac.Integration.WebApi\AutofacActionFilterAdapter.cs:line 66
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Filters.AuthorizationFilterAttribute.<ExecuteAuthorizationFilterAsyncCore>d__3.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.AuthenticationFilterResult.<ExecuteAsync>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__6.MoveNext() 
+
+----------------------------------------------------------------------------------------------------
+
+2020-06-03 14:52:14.3247|ERROR| ----------------------------------------------------------------------------------------------------
+URI: /api/admin/user/login
+CONTROLLER NAME: Admin
+ACTION NAME: Login
+PARAMS:
+PARAM NAME: userModel | PARAM VALUE: IBAR.TradeModel.Business.ViewModels.LoginModel
+EXCEPTION
+MESSAGE: The entity type 'IBAR.TradeModel.Data.Entities.MasterAccount' on which the navigation property 'UpdatedBy' is declared is not a base type for the type 'IBAR.TradeModel.Data.Entities.TradeAccountNote' referred to by the inverse navigation property 'UpdatedMasterAccounts'. 
+STACKTRACE:    at System.Data.Entity.ModelConfiguration.Configuration.Properties.Navigation.ConventionNavigationPropertyConfiguration.HasInverseNavigationProperty(Func`2 inverseNavigationPropertyGetter)
+   at System.Data.Entity.ModelConfiguration.Conventions.InversePropertyAttributeConvention.Apply(PropertyInfo memberInfo, ConventionTypeConfiguration configuration, InversePropertyAttribute attribute)
+   at System.Data.Entity.ModelConfiguration.Conventions.PropertyAttributeConfigurationConvention`1.<.ctor>b__1_0(ConventionTypeConfiguration ec)
+   at System.Data.Entity.ModelConfiguration.Conventions.TypeConvention.ApplyCore(Type memberInfo, Func`1 configuration, ModelConfiguration modelConfiguration)
+   at System.Data.Entity.ModelConfiguration.Conventions.TypeConventionBase.Apply(Type memberInfo, Func`1 configuration, ModelConfiguration modelConfiguration)
+   at System.Data.Entity.ModelConfiguration.Configuration.ConventionsConfiguration.ApplyTypeConfiguration[TStructuralTypeConfiguration](Type type, Func`1 structuralTypeConfiguration, ModelConfiguration modelConfiguration)
+   at System.Data.Entity.ModelConfiguration.Conventions.Convention.ApplyTypeConfiguration[TStructuralTypeConfiguration](Type type, Func`1 structuralTypeConfiguration, ModelConfiguration modelConfiguration)
+   at System.Data.Entity.ModelConfiguration.Configuration.ConventionsConfiguration.ApplyTypeConfiguration[TStructuralTypeConfiguration](Type type, Func`1 structuralTypeConfiguration, ModelConfiguration modelConfiguration)
+   at System.Data.Entity.ModelConfiguration.Mappers.TypeMapper.MapEntityType(Type type)
+   at System.Data.Entity.ModelConfiguration.Mappers.NavigationPropertyMapper.Map(PropertyInfo propertyInfo, EntityType entityType, Func`1 entityTypeConfiguration)
+   at System.Data.Entity.ModelConfiguration.Mappers.TypeMapper.MapEntityType(Type type)
+   at System.Data.Entity.ModelConfiguration.Mappers.NavigationPropertyMapper.Map(PropertyInfo propertyInfo, EntityType entityType, Func`1 entityTypeConfiguration)
+   at System.Data.Entity.ModelConfiguration.Mappers.TypeMapper.MapEntityType(Type type)
+   at System.Data.Entity.DbModelBuilder.MapTypes(EdmModel model)
+   at System.Data.Entity.DbModelBuilder.Build(DbProviderManifest providerManifest, DbProviderInfo providerInfo)
+   at System.Data.Entity.DbModelBuilder.Build(DbConnection providerConnection)
+   at System.Data.Entity.Internal.LazyInternalContext.CreateModel(LazyInternalContext internalContext)
+   at System.Data.Entity.Internal.RetryLazy`2.GetValue(TInput input)
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   at System.Data.Entity.Internal.InternalContext.Initialize()
+   at System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Include(String path)
+   at System.Data.Entity.Infrastructure.DbQuery`1.Include(String path)
+   at System.Data.Entity.QueryableExtensions.Include[T](IQueryable`1 source, String path)
+   at System.Data.Entity.QueryableExtensions.Include[T,TProperty](IQueryable`1 source, Expression`1 path)
+   at IBAR.TradeModel.Data.Repositories.UserRepository.GetByEmail(String email) in C:\Users\vadima\Documents\DevEnv\Workspaces\ibreportingsystem\Sources\WebApi\DataLayer\IBAR.TradeModel.Data\Repositories\IUserRepository.cs:line 32
+   at IBAR.TradeModel.Business.Services.AuthenticationService.LoginAs(LoginModel modelParam, String roleName) in C:\Users\vadima\Documents\DevEnv\Workspaces\ibreportingsystem\Sources\WebApi\BusinessLayer\IBAR.TradeModel.Business\Services\IAuthenticationService.cs:line 42
+   at IBAR.Api.Controllers.AdminController.Login(LoginModel userModel) in C:\Users\vadima\Documents\DevEnv\Workspaces\ibreportingsystem\Sources\WebApi\IBAR.Api\Controllers\Admin\AdminController.cs:line 36
+   at lambda_method(Closure , Object , Object[] )
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass6_2.<GetExecutor>b__2(Object instance, Object[] methodParameters)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Autofac.Integration.WebApi.AutofacActionFilterAdapter.<CallOnActionExecutedAsync>d__3.MoveNext() in C:\projects\autofac-webapi\src\Autofac.Integration.WebApi\AutofacActionFilterAdapter.cs:line 83
+--- End of stack trace from previous location where exception was thrown ---
+   at Autofac.Integration.WebApi.AutofacActionFilterAdapter.<CallOnActionExecutedAsync>d__3.MoveNext() in C:\projects\autofac-webapi\src\Autofac.Integration.WebApi\AutofacActionFilterAdapter.cs:line 129
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Autofac.Integration.WebApi.AutofacActionFilterAdapter.<ExecuteActionFilterAsync>d__2.MoveNext() in C:\projects\autofac-webapi\src\Autofac.Integration.WebApi\AutofacActionFilterAdapter.cs:line 66
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Filters.AuthorizationFilterAttribute.<ExecuteAuthorizationFilterAsyncCore>d__3.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.AuthenticationFilterResult.<ExecuteAsync>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__6.MoveNext() 
+
+----------------------------------------------------------------------------------------------------
+
+2020-06-03 15:42:06.1078|ERROR| ----------------------------------------------------------------------------------------------------
+URI: /api/admin/accounts/master/add
+CONTROLLER NAME: Admin
+ACTION NAME: AddNewAccountMaster
+PARAMS:
+PARAM NAME: modelParam | PARAM VALUE: IBAR.TradeModel.Business.ViewModels.Response.MasterAccountCreateEditModel
+EXCEPTION
+MESSAGE: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+MasterAccountCreateEditModel -> MasterAccount
+IBAR.TradeModel.Business.ViewModels.Response.MasterAccountCreateEditModel -> IBAR.TradeModel.Data.Entities.MasterAccount 
+STACKTRACE:    at lambda_method(Closure , MasterAccountCreateEditModel , MasterAccount , ResolutionContext )
+   at lambda_method(Closure , Object , Object , ResolutionContext )
+   at IBAR.TradeModel.Business.Services.MasterAccountService.AddMasterAccount(MasterAccountCreateEditModel modelParam) in C:\Users\vadima\Documents\DevEnv\Workspaces\ibreportingsystem\Sources\WebApi\BusinessLayer\IBAR.TradeModel.Business\Services\IMasterAccountService.cs:line 56
+   at IBAR.Api.Controllers.Admin.AdminController.AddNewAccountMaster(MasterAccountCreateEditModel modelParam) in C:\Users\vadima\Documents\DevEnv\Workspaces\ibreportingsystem\Sources\WebApi\IBAR.Api\Controllers\Admin\AdminController.cs:line 93
+   at lambda_method(Closure , Object , Object[] )
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass6_2.<GetExecutor>b__2(Object instance, Object[] methodParameters)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Autofac.Integration.WebApi.AutofacActionFilterAdapter.<CallOnActionExecutedAsync>d__3.MoveNext() in C:\projects\autofac-webapi\src\Autofac.Integration.WebApi\AutofacActionFilterAdapter.cs:line 83
+--- End of stack trace from previous location where exception was thrown ---
+   at Autofac.Integration.WebApi.AutofacActionFilterAdapter.<CallOnActionExecutedAsync>d__3.MoveNext() in C:\projects\autofac-webapi\src\Autofac.Integration.WebApi\AutofacActionFilterAdapter.cs:line 129
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Autofac.Integration.WebApi.AutofacActionFilterAdapter.<ExecuteActionFilterAsync>d__2.MoveNext() in C:\projects\autofac-webapi\src\Autofac.Integration.WebApi\AutofacActionFilterAdapter.cs:line 66
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Filters.AuthorizationFilterAttribute.<ExecuteAuthorizationFilterAsyncCore>d__3.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.AuthenticationFilterResult.<ExecuteAsync>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__6.MoveNext() 
+
+----------------------------------------------------------------------------------------------------
+
+2020-06-03 15:46:37.2130|ERROR| ----------------------------------------------------------------------------------------------------
+URI: /api/admin/accounts/master/update
+CONTROLLER NAME: Admin
+ACTION NAME: UpdateMasterAccount
+PARAMS:
+PARAM NAME: modelParam | PARAM VALUE: IBAR.TradeModel.Business.ViewModels.Response.MasterAccountCreateEditModel
+EXCEPTION
+MESSAGE: Store update, insert, or delete statement affected an unexpected number of rows (0). Entities may have been modified or deleted since entities were loaded. See http://go.microsoft.com/fwlink/?LinkId=472540 for information on understanding and handling optimistic concurrency exceptions. 
+STACKTRACE:    at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   at System.Data.Entity.DbContext.SaveChanges()
+   at IBAR.TradeModel.Data.TradeModelContext.SaveChanges() in C:\Users\vadima\Documents\DevEnv\Workspaces\ibreportingsystem\Sources\WebApi\DataLayer\IBAR.TradeModel.Data\TradeModelContext.cs:line 51
+   at IBAR.TradeModel.Data.Repositories.MasterAccountRepository.Update(MasterAccount account) in C:\Users\vadima\Documents\DevEnv\Workspaces\ibreportingsystem\Sources\WebApi\DataLayer\IBAR.TradeModel.Data\Repositories\IMasterAccountRepository.cs:line 54
+   at IBAR.TradeModel.Business.Services.MasterAccountService.UpdateMasterAccount(MasterAccountCreateEditModel modelParam) in C:\Users\vadima\Documents\DevEnv\Workspaces\ibreportingsystem\Sources\WebApi\BusinessLayer\IBAR.TradeModel.Business\Services\IMasterAccountService.cs:line 96
+   at IBAR.Api.Controllers.Admin.AdminController.UpdateMasterAccount(MasterAccountCreateEditModel modelParam) in C:\Users\vadima\Documents\DevEnv\Workspaces\ibreportingsystem\Sources\WebApi\IBAR.Api\Controllers\Admin\AdminController.cs:line 107
+   at lambda_method(Closure , Object , Object[] )
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass6_2.<GetExecutor>b__2(Object instance, Object[] methodParameters)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Autofac.Integration.WebApi.AutofacActionFilterAdapter.<CallOnActionExecutedAsync>d__3.MoveNext() in C:\projects\autofac-webapi\src\Autofac.Integration.WebApi\AutofacActionFilterAdapter.cs:line 83
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Autofac.Integration.WebApi.AutofacActionFilterAdapter.<CallOnActionExecutedAsync>d__3.MoveNext() in C:\projects\autofac-webapi\src\Autofac.Integration.WebApi\AutofacActionFilterAdapter.cs:line 129
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Autofac.Integration.WebApi.AutofacActionFilterAdapter.<ExecuteActionFilterAsync>d__2.MoveNext() in C:\projects\autofac-webapi\src\Autofac.Integration.WebApi\AutofacActionFilterAdapter.cs:line 66
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Filters.AuthorizationFilterAttribute.<ExecuteAuthorizationFilterAsyncCore>d__3.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Controllers.AuthenticationFilterResult.<ExecuteAsync>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__6.MoveNext() 
+INNEREXCEPTION
+MESSAGE: Store update, insert, or delete statement affected an unexpected number of rows (0). Entities may have been modified or deleted since entities were loaded. See http://go.microsoft.com/fwlink/?LinkId=472540 for information on understanding and handling optimistic concurrency exceptions. 
+STACKTRACE:    at System.Data.Entity.Core.Mapping.Update.Internal.UpdateTranslator.ValidateRowsAffected(Int64 rowsAffected, UpdateCommand source)
+   at System.Data.Entity.Core.Mapping.Update.Internal.UpdateTranslator.Update()
+   at System.Data.Entity.Core.EntityClient.Internal.EntityAdapter.<>c.<Update>b__21_0(UpdateTranslator ut)
+   at System.Data.Entity.Core.EntityClient.Internal.EntityAdapter.Update[T](T noChangesResult, Func`2 updateFunction)
+   at System.Data.Entity.Core.EntityClient.Internal.EntityAdapter.Update()
+   at System.Data.Entity.Core.Objects.ObjectContext.<SaveChangesToStore>b__153_0()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesToStore(SaveOptions options, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction)
+   at System.Data.Entity.Core.Objects.ObjectContext.<>c__DisplayClass148_0.<SaveChangesInternal>b__0()
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChanges(SaveOptions options)
+   at System.Data.Entity.Internal.InternalContext.SaveChanges() 
+
+
+----------------------------------------------------------------------------------------------------
+
+2020-06-03 15:52:44.2750|ERROR| ----------------------------------------------------------------------------------------------------
+URI: /api/admin/accounts/master/delete/9
+CONTROLLER NAME: Admin
+ACTION NAME: DeleteMasterAccount
+PARAMS:
+EXCEPTION
+MESSAGE: The operation was canceled. 
+STACKTRACE:    at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at System.Threading.CancellationToken.ThrowIfCancellationRequested()
+   at System.Web.Http.HostAuthenticationFilter.<AuthenticateAsync>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at System.Web.Http.Controllers.AuthenticationFilterResult.<ExecuteAsync>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__6.MoveNext() 
+
+----------------------------------------------------------------------------------------------------
+
+2020-06-03 16:24:03.9744|ERROR| ----------------------------------------------------------------------------------------------------
+URI: /api/ftp/AddNewFtpCredential
+CONTROLLER NAME: Ftp
+ACTION NAME: AddNewFtpCredential
+PARAMS:
+PARAM NAME: model | PARAM VALUE: IBAR.TradeModel.Business.ViewModels.Request.Admin.FtpCredentialCreateEditModel
+EXCEPTION
+MESSAGE: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+FtpCredentialCreateEditModel -> FtpCredential
+IBAR.TradeModel.Business.ViewModels.Request.Admin.FtpCredentialCreateEditModel -> IBAR.TradeModel.Data.Entities.FtpCredential 
+STACKTRACE:    at lambda_method(Closure , FtpCredentialCreateEditModel , FtpCredential , ResolutionContext )
+   at lambda_method(Closure , Object , Object , ResolutionContext )
+   at IBAR.TradeModel.Business.Services.FtpCredentialService.AddNewFtpCredential(FtpCredentialCreateEditModel model) in C:\Users\vadima\Documents\DevEnv\Workspaces\ibreportingsystem\Sources\WebApi\BusinessLayer\IBAR.TradeModel.Business\Services\IFtpCredentialService.cs:line 41
+   at IBAR.Api.Controllers.Admin.FtpController.AddNewFtpCredential(FtpCredentialCreateEditModel model) in C:\Users\vadima\Documents\DevEnv\Workspaces\ibreportingsystem\Sources\WebApi\IBAR.Api\Controllers\Admin\FtpController.cs:line 29
+   at lambda_method(Closure , Object , Object[] )
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass6_2.<GetExecutor>b__2(Object instance, Object[] methodParameters)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Autofac.Integration.WebApi.AutofacActionFilterAdapter.<CallOnActionExecutedAsync>d__3.MoveNext() in C:\projects\autofac-webapi\src\Autofac.Integration.WebApi\AutofacActionFilterAdapter.cs:line 83
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Autofac.Integration.WebApi.AutofacActionFilterAdapter.<CallOnActionExecutedAsync>d__3.MoveNext() in C:\projects\autofac-webapi\src\Autofac.Integration.WebApi\AutofacActionFilterAdapter.cs:line 129
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Autofac.Integration.WebApi.AutofacActionFilterAdapter.<ExecuteActionFilterAsync>d__2.MoveNext() in C:\projects\autofac-webapi\src\Autofac.Integration.WebApi\AutofacActionFilterAdapter.cs:line 66
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Filters.AuthorizationFilterAttribute.<ExecuteAuthorizationFilterAsyncCore>d__3.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Controllers.AuthenticationFilterResult.<ExecuteAsync>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__6.MoveNext() 
+
+----------------------------------------------------------------------------------------------------
+
+2020-06-03 16:25:43.1259|ERROR| ----------------------------------------------------------------------------------------------------
+URI: /api/ftp/AddNewFtpCredential
+CONTROLLER NAME: Ftp
+ACTION NAME: AddNewFtpCredential
+PARAMS:
+PARAM NAME: model | PARAM VALUE: IBAR.TradeModel.Business.ViewModels.Request.Admin.FtpCredentialCreateEditModel
+EXCEPTION
+MESSAGE: Error mapping types.
+
+Mapping types:
+FtpCredentialCreateEditModel -> FtpCredential
+IBAR.TradeModel.Business.ViewModels.Request.Admin.FtpCredentialCreateEditModel -> IBAR.TradeModel.Data.Entities.FtpCredential
+
+Type Map configuration:
+FtpCredentialCreateEditModel -> FtpCredential
+IBAR.TradeModel.Business.ViewModels.Request.Admin.FtpCredentialCreateEditModel -> IBAR.TradeModel.Data.Entities.FtpCredential
+
+Destination Member:
+MasterAccounts
+ STACKTRACE:    at lambda_method(Closure , FtpCredentialCreateEditModel , FtpCredential , ResolutionContext )
+   at lambda_method(Closure , Object , Object , ResolutionContext )
+   at IBAR.TradeModel.Business.Services.FtpCredentialService.AddNewFtpCredential(FtpCredentialCreateEditModel model) in C:\Users\vadima\Documents\DevEnv\Workspaces\ibreportingsystem\Sources\WebApi\BusinessLayer\IBAR.TradeModel.Business\Services\IFtpCredentialService.cs:line 41
+   at IBAR.Api.Controllers.Admin.FtpController.AddNewFtpCredential(FtpCredentialCreateEditModel model) in C:\Users\vadima\Documents\DevEnv\Workspaces\ibreportingsystem\Sources\WebApi\IBAR.Api\Controllers\Admin\FtpController.cs:line 29
+   at lambda_method(Closure , Object , Object[] )
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass6_2.<GetExecutor>b__2(Object instance, Object[] methodParameters)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Autofac.Integration.WebApi.AutofacActionFilterAdapter.<CallOnActionExecutedAsync>d__3.MoveNext() in C:\projects\autofac-webapi\src\Autofac.Integration.WebApi\AutofacActionFilterAdapter.cs:line 83
+--- End of stack trace from previous location where exception was thrown ---
+   at Autofac.Integration.WebApi.AutofacActionFilterAdapter.<CallOnActionExecutedAsync>d__3.MoveNext() in C:\projects\autofac-webapi\src\Autofac.Integration.WebApi\AutofacActionFilterAdapter.cs:line 129
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Autofac.Integration.WebApi.AutofacActionFilterAdapter.<ExecuteActionFilterAsync>d__2.MoveNext() in C:\projects\autofac-webapi\src\Autofac.Integration.WebApi\AutofacActionFilterAdapter.cs:line 66
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Filters.AuthorizationFilterAttribute.<ExecuteAuthorizationFilterAsyncCore>d__3.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.AuthenticationFilterResult.<ExecuteAsync>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__6.MoveNext() 
+INNEREXCEPTION
+MESSAGE: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+MasterAccountVm -> MasterAccount
+IBAR.ServiceLayer.ViewModels.MasterAccountVm -> IBAR.TradeModel.Data.Entities.MasterAccount 
+STACKTRACE:    at lambda_method(Closure , MasterAccountVm , MasterAccount , ResolutionContext )
+   at lambda_method(Closure , FtpCredentialCreateEditModel , FtpCredential , ResolutionContext ) 
+
+
+----------------------------------------------------------------------------------------------------
+
+2020-06-03 17:27:43.4854|ERROR| ----------------------------------------------------------------------------------------------------
+URI: /api/auth/login
+CONTROLLER NAME: Authentication
+ACTION NAME: Login
+PARAMS:
+PARAM NAME: userModel | PARAM VALUE: IBAR.TradeModel.Business.ViewModels.LoginModel
+EXCEPTION
+MESSAGE: Invalid login data 
+STACKTRACE:    at IBAR.TradeModel.Business.Services.AuthenticationService.CheckCredentials(LoginModel modelParam, User repositoryUser, String roleName) in C:\Users\vadima\Documents\DevEnv\Workspaces\ibreportingsystem\Sources\WebApi\BusinessLayer\IBAR.TradeModel.Business\Services\IAuthenticationService.cs:line 74
+   at IBAR.TradeModel.Business.Services.AuthenticationService.LoginAs(LoginModel modelParam, String roleName) in C:\Users\vadima\Documents\DevEnv\Workspaces\ibreportingsystem\Sources\WebApi\BusinessLayer\IBAR.TradeModel.Business\Services\IAuthenticationService.cs:line 44
+   at IBAR.Api.Controllers.AuthenticationController.Login(LoginModel userModel) in C:\Users\vadima\Documents\DevEnv\Workspaces\ibreportingsystem\Sources\WebApi\IBAR.Api\Controllers\AuthenticationController.cs:line 25
+   at lambda_method(Closure , Object , Object[] )
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass6_2.<GetExecutor>b__2(Object instance, Object[] methodParameters)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Autofac.Integration.WebApi.AutofacActionFilterAdapter.<CallOnActionExecutedAsync>d__3.MoveNext() in C:\projects\autofac-webapi\src\Autofac.Integration.WebApi\AutofacActionFilterAdapter.cs:line 83
+--- End of stack trace from previous location where exception was thrown ---
+   at Autofac.Integration.WebApi.AutofacActionFilterAdapter.<CallOnActionExecutedAsync>d__3.MoveNext() in C:\projects\autofac-webapi\src\Autofac.Integration.WebApi\AutofacActionFilterAdapter.cs:line 129
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Autofac.Integration.WebApi.AutofacActionFilterAdapter.<ExecuteActionFilterAsync>d__2.MoveNext() in C:\projects\autofac-webapi\src\Autofac.Integration.WebApi\AutofacActionFilterAdapter.cs:line 66
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.AuthenticationFilterResult.<ExecuteAsync>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__6.MoveNext() 
+
+----------------------------------------------------------------------------------------------------
+
+2020-06-03 17:27:47.7014|ERROR| ----------------------------------------------------------------------------------------------------
+URI: /api/auth/login
+CONTROLLER NAME: Authentication
+ACTION NAME: Login
+PARAMS:
+PARAM NAME: userModel | PARAM VALUE: IBAR.TradeModel.Business.ViewModels.LoginModel
+EXCEPTION
+MESSAGE: Invalid login data 
+STACKTRACE:    at IBAR.TradeModel.Business.Services.AuthenticationService.CheckCredentials(LoginModel modelParam, User repositoryUser, String roleName) in C:\Users\vadima\Documents\DevEnv\Workspaces\ibreportingsystem\Sources\WebApi\BusinessLayer\IBAR.TradeModel.Business\Services\IAuthenticationService.cs:line 74
+   at IBAR.TradeModel.Business.Services.AuthenticationService.LoginAs(LoginModel modelParam, String roleName) in C:\Users\vadima\Documents\DevEnv\Workspaces\ibreportingsystem\Sources\WebApi\BusinessLayer\IBAR.TradeModel.Business\Services\IAuthenticationService.cs:line 44
+   at IBAR.Api.Controllers.AuthenticationController.Login(LoginModel userModel) in C:\Users\vadima\Documents\DevEnv\Workspaces\ibreportingsystem\Sources\WebApi\IBAR.Api\Controllers\AuthenticationController.cs:line 25
+   at lambda_method(Closure , Object , Object[] )
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass6_2.<GetExecutor>b__2(Object instance, Object[] methodParameters)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Autofac.Integration.WebApi.AutofacActionFilterAdapter.<CallOnActionExecutedAsync>d__3.MoveNext() in C:\projects\autofac-webapi\src\Autofac.Integration.WebApi\AutofacActionFilterAdapter.cs:line 83
+--- End of stack trace from previous location where exception was thrown ---
+   at Autofac.Integration.WebApi.AutofacActionFilterAdapter.<CallOnActionExecutedAsync>d__3.MoveNext() in C:\projects\autofac-webapi\src\Autofac.Integration.WebApi\AutofacActionFilterAdapter.cs:line 129
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Autofac.Integration.WebApi.AutofacActionFilterAdapter.<ExecuteActionFilterAsync>d__2.MoveNext() in C:\projects\autofac-webapi\src\Autofac.Integration.WebApi\AutofacActionFilterAdapter.cs:line 66
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.AuthenticationFilterResult.<ExecuteAsync>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__6.MoveNext() 
+
+----------------------------------------------------------------------------------------------------
+
+2020-06-03 17:27:56.2706|ERROR| ----------------------------------------------------------------------------------------------------
+URI: /api/auth/login
+CONTROLLER NAME: Authentication
+ACTION NAME: Login
+PARAMS:
+PARAM NAME: userModel | PARAM VALUE: IBAR.TradeModel.Business.ViewModels.LoginModel
+EXCEPTION
+MESSAGE: Invalid login data 
+STACKTRACE:    at IBAR.TradeModel.Business.Services.AuthenticationService.CheckCredentials(LoginModel modelParam, User repositoryUser, String roleName) in C:\Users\vadima\Documents\DevEnv\Workspaces\ibreportingsystem\Sources\WebApi\BusinessLayer\IBAR.TradeModel.Business\Services\IAuthenticationService.cs:line 74
+   at IBAR.TradeModel.Business.Services.AuthenticationService.LoginAs(LoginModel modelParam, String roleName) in C:\Users\vadima\Documents\DevEnv\Workspaces\ibreportingsystem\Sources\WebApi\BusinessLayer\IBAR.TradeModel.Business\Services\IAuthenticationService.cs:line 44
+   at IBAR.Api.Controllers.AuthenticationController.Login(LoginModel userModel) in C:\Users\vadima\Documents\DevEnv\Workspaces\ibreportingsystem\Sources\WebApi\IBAR.Api\Controllers\AuthenticationController.cs:line 25
+   at lambda_method(Closure , Object , Object[] )
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass6_2.<GetExecutor>b__2(Object instance, Object[] methodParameters)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Autofac.Integration.WebApi.AutofacActionFilterAdapter.<CallOnActionExecutedAsync>d__3.MoveNext() in C:\projects\autofac-webapi\src\Autofac.Integration.WebApi\AutofacActionFilterAdapter.cs:line 83
+--- End of stack trace from previous location where exception was thrown ---
+   at Autofac.Integration.WebApi.AutofacActionFilterAdapter.<CallOnActionExecutedAsync>d__3.MoveNext() in C:\projects\autofac-webapi\src\Autofac.Integration.WebApi\AutofacActionFilterAdapter.cs:line 129
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Autofac.Integration.WebApi.AutofacActionFilterAdapter.<ExecuteActionFilterAsync>d__2.MoveNext() in C:\projects\autofac-webapi\src\Autofac.Integration.WebApi\AutofacActionFilterAdapter.cs:line 66
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.AuthenticationFilterResult.<ExecuteAsync>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__6.MoveNext() 
+
+----------------------------------------------------------------------------------------------------
+

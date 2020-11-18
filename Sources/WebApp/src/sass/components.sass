@@ -1,0 +1,65 @@
+@import "custom-theme"
+
+a
+  color: $black
+
+.btns-group
+  margin-top: 10px
+  .btn:nth-last-of-type(n+2)
+    margin-right: 20px
+
+.btn.btn--icon
+  opacity: .2
+  transition: all .4s
+  &:hover
+    opacity: 1
+
+.toolbar
+  position: absolute
+
+.btn--grey
+  background: $grey
+.btn--d-grey
+  background: $dark-grey
+  color: $white
+.btn--l-grey
+    background: $btn-light-grey
+.btn--green
+  background: $green
+  color: $white
+.btn--red
+  background: $red
+  color: $white
+.btn--blue
+  background: $blue
+  color: $white
+
+button.btn:active, button.btn:focus, div>button:focus, .btn
+  outline: none
+  box-shadow: none
+
+.title-inline
+  display: flex
+
+
+.right, .right-sm
+  margin-left: auto
+
+@media (max-width: $sm)
+  .right-sm
+    margin-left: 0
+
+.hr
+  display: inline-block
+  border-top: $border-grey-style
+  width: 100%
+  box-sizing: content-box
+  margin: 15px
+
+.error-message
+  margin: 0
+  color: mat-color($WebApp-warn)
+  font-size: .8rem
+
+.mat-menu-item i
+  margin-right: 10px

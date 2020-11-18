@@ -1,0 +1,52 @@
+form.custom-form-block
+  & > mat-form-field
+    display: block
+  .mat-form-field-appearance-outline .mat-form-field-outline-thick
+    color: $blue
+  .mat-form-field.suffix-align-center .mat-form-field-suffix
+    align-self: center
+  &.state-matcher
+    .mat-form-field
+      padding-bottom: 5px
+      display: block
+      min-width: 300px
+    .mat-form-field + app-state-model-errors:not(:last-of-type)
+      padding-bottom: 10px
+    app-state-model-errors
+      width: auto
+      max-width: 100%
+      display: block
+    .mat-form-field-wrapper
+      padding-bottom: 0
+    .mat-form-field-appearance-legacy .mat-form-field-underline
+      bottom: 0
+
+.form-group
+  .mat-form-field-appearance-outline .mat-form-field-outline-start,
+  .mat-form-field-appearance-outline .mat-form-field-outline-end,
+  .mat-form-field-appearance-outline .mat-form-field-outline-gap
+    border-radius: unset
+
+.check-group
+  display: inline-block
+  &:nth-last-of-type(n+2)
+    margin-right: 20px
+
+input[type="text"].form-control, select.custom-select
+  width: auto
+  min-width: 150px
+  &.c-invalid
+    border-color: $red
+  &, .border--d-grey
+    color: $dark-grey
+    border: 1px solid $black
+    border-radius: unset
+    box-shadow: unset
+label
+  margin: 0 10px 0 0
+  align-self: center
+
+
+@media (max-width: $sm)
+  form.row mat-form-field.mat-form-field
+    width: 100%

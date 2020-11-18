@@ -1,0 +1,277 @@
+<div class="row">
+
+  <h3 class="col-12">Summery</h3>
+
+  <div class="w-100 mt-15"></div>
+
+  <div class="col-auto">
+    <app-card
+      title="Nav"
+      [totalValue]="totalData[chartType.NAV]"
+      [iconClass]="'fas fa-coins'"
+      (click)="cardClick(chartType.NAV)">
+    </app-card>
+  </div>
+
+  <div class="col-auto">
+    <app-card
+      title="OPN position value"
+      [totalValue]="totalData[chartType.OPEN_POSITIONS]"
+      [iconClass]="'fas fa-users'"
+      (click)="cardClick(chartType.OPEN_POSITIONS)">
+    </app-card>
+  </div>
+
+  <div class="col-auto">
+    <app-card
+      title="Total UN P/L"
+      [totalValue]="totalData[chartType.TOTAL_UN]"
+      [iconClass]="'fas fa-tag'"
+      (click)="cardClick(chartType.TOTAL_UN)">
+    </app-card>
+  </div>
+
+  <div class="w-100"></div>
+
+  <div class="col-12 block">
+    <app-period-picker
+      (selectedPeriodChange)="onChartPeriodChange($event)">
+    </app-period-picker>
+  </div>
+
+  <h2 class="col-12 block text-center chart-title">{{resolveChartName()}}</h2>
+
+  <div class="col-12 block">
+    <app-portfolio-line-chart #portLineChart [chartData]="chartData"></app-portfolio-line-chart>
+  </div>
+
+  <div class="col-12 nav-components">
+
+    <h3>NAV Components</h3>
+
+    <form [formGroup]="navForm" class="row">
+
+      <div class="col-lg-4 col-md-6 form-group">
+        <mat-form-field appearance="outline">
+          <mat-label>NAV</mat-label>
+          <input matInput type="text" placeholder="NAV" formControlName="navNav" [value]="checkEmpty(portfolio.total)"
+                 readonly>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Cash</mat-label>
+          <input matInput type="text" placeholder="Cash" formControlName="navCash" [value]="checkEmpty(portfolio.cash)"
+                 readonly>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Stock</mat-label>
+          <input matInput type="text" placeholder="Stock" formControlName="navStock"
+                 [value]="checkEmpty(portfolio.stock)" readonly>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Options</mat-label>
+          <input matInput type="text" placeholder="Options" formControlName="navOptions"
+                 [value]="checkEmpty(portfolio.options)" readonly>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Commodities</mat-label>
+          <input matInput type="text" placeholder="Commodities" formControlName="navCommodities"
+                 [value]="checkEmpty(portfolio.commodities)" readonly>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Interest Accruals</mat-label>
+          <input matInput type="text" placeholder="Interest Accruals" formControlName="navInterestAccruals"
+                 [value]="checkEmpty(portfolio.interestAccruals)" readonly>
+        </mat-form-field>
+      </div>
+
+      <div class="col-lg-4 col-md-6 form-group">
+        <mat-form-field appearance="outline">
+          <mat-label>NAV long</mat-label>
+          <input matInput type="text" placeholder="NAV long" formControlName="navNavLong"
+                 [value]="checkEmpty(portfolio.totalLong)" readonly>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Cash long</mat-label>
+          <input matInput type="text" placeholder="Cash long" formControlName="navCashLong"
+                 [value]="checkEmpty(portfolio.cashLong)" readonly>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Stock long</mat-label>
+          <input matInput type="text" placeholder="Stock long" formControlName="navStockLong"
+                 [value]="checkEmpty(portfolio.stockLong)" readonly>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Options long</mat-label>
+          <input matInput type="text" placeholder="Options long" formControlName="navOptionsLong"
+                 [value]="checkEmpty(portfolio.optionsLong)" readonly>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Commodities long</mat-label>
+          <input matInput type="text" placeholder="Commodities long" formControlName="navCommoditiesLong"
+                 [value]="checkEmpty(portfolio.commoditiesLong)" readonly>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Interest Accruals long</mat-label>
+          <input matInput type="text" placeholder="Interest Accruals long" formControlName="navInterestAccrualsLong"
+                 [value]="checkEmpty(portfolio.interestAccrualsLong)" readonly>
+        </mat-form-field>
+      </div>
+
+      <div class="col-lg-4 col-md-6 form-group">
+        <mat-form-field appearance="outline">
+          <mat-label>NAV short</mat-label>
+          <input matInput type="text" placeholder="NAV short" formControlName="navNavShort"
+                 [value]="checkEmpty(portfolio.totalShort)" readonly>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Cash short</mat-label>
+          <input matInput type="text" placeholder="Cash short" formControlName="navCashShort"
+                 [value]="checkEmpty(portfolio.cashShort)" readonly>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Stock short</mat-label>
+          <input matInput type="text" placeholder="Stock short" formControlName="navSockShort"
+                 [value]="checkEmpty(portfolio.stockShort)" readonly>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Options short</mat-label>
+          <input matInput type="text" placeholder="Options short" formControlName="navOptionsShort"
+                 [value]="checkEmpty(portfolio.optionsShort)" readonly>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Commodities short</mat-label>
+          <input matInput type="text" placeholder="Commodities short" formControlName="navCommoditiesShort"
+                 [value]="checkEmpty(portfolio.commoditiesShort)" readonly>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Interest Accruals short</mat-label>
+          <input matInput type="text" placeholder="Interest Accruals short" formControlName="navInterestAccrualsShort"
+                 [value]="checkEmpty(portfolio.interestAccrualsShort)" readonly>
+        </mat-form-field>
+      </div>
+
+    </form>
+
+  </div>
+
+  <div class="col-12 portfolio">
+    <h3>Portfolio</h3>
+
+    <p class="mt-4">Number of records: {{openPositions.length}}</p>
+
+    <app-date-picker [availableDates]="availableOpenPosDates"
+                     [setDate]="openPosStartDate" class="d-block mt-15" (dateChanged)="openPositionDateChanged($event)"></app-date-picker>
+
+    <app-open-position-block *ngFor="let value of openPositions.slice(0, currOpenPosIndex); let i = index"
+                             [index]="i+1"
+                             [openPosition]="value"></app-open-position-block>
+
+    <p *ngIf="!isOpenPositions" class="mt-3 font-weight-bolder">There are no open position records by trade account</p>
+
+    <div class="wrapper d-flex justify-content-center">
+      <button [disabled]="currOpenPosIndex == openPosDataLength"
+              matTooltip="Next 1 record"
+              class="btn btn--icon" (click)="nextOpenPos()">
+        <i class="fas fa-angle-down"></i>
+      </button>
+      <button [disabled]="currOpenPosIndex + 10 == openPosDataLength"
+              matTooltip="Next 10 records"
+              class="btn btn--icon" (click)="nextOpenPos(10)">
+        <i class="fas fa-angle-double-down"></i>
+      </button>
+      <button [disabled]="currOpenPosIndex === 1"
+              matTooltip="Collapse all records"
+              class="btn btn--icon" (click)="collapseOpenPos()">
+        <i class="fas fa-angle-double-up"></i>
+      </button>
+      <button [disabled]="currOpenPosIndex === 1"
+              matTooltip="Collapse 1 record"
+              class="btn btn--icon" (click)="collapseOpenPos(1)">
+        <i class="fas fa-angle-up"></i>
+      </button>
+    </div>
+
+  </div>
+
+  <hr class="col-12"/>
+
+  <div class="col-12 pie-charts">
+    <div class="row justify-content-center">
+
+      <div class="col-auto">
+        <app-pie-block
+          title="Portfolio By Symbol">
+        </app-pie-block>
+      </div>
+
+      <div class="col-auto">
+        <app-pie-block
+          title="Nav By Asset">
+        </app-pie-block>
+      </div>
+
+      <div class="col-auto">
+        <app-pie-block
+          title="Portfolio By Currency">
+        </app-pie-block>
+      </div>
+
+    </div>
+  </div>
+
+  <hr class="col-12 block"/>
+
+  <div class="col-12 clients-traded-symbol block">
+
+    <h3>Clients traded Symbols</h3>
+
+    <form action="">
+      <mat-form-field appearance="outline">
+        <mat-label>Symbol</mat-label>
+        <input matInput type="text" placeholder="Symbol">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Description</mat-label>
+        <input matInput type="text" placeholder="Description">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>assetCategory</mat-label>
+        <input matInput type="text" placeholder="assetCategory">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>listingExchange</mat-label>
+        <input matInput type="text" placeholder="listingExchange">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Volume</mat-label>
+        <input matInput type="text" placeholder="Volume">
+      </mat-form-field>
+    </form>
+    <hr>
+    <form action="">
+      <mat-form-field appearance="outline">
+        <mat-label>Symbol</mat-label>
+        <input matInput type="text" placeholder="Symbol">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Description</mat-label>
+        <input matInput type="text" placeholder="Description">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>assetCategory</mat-label>
+        <input matInput type="text" placeholder="assetCategory">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>listingExchange</mat-label>
+        <input matInput type="text" placeholder="listingExchange">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Volume</mat-label>
+        <input matInput type="text" placeholder="Volume">
+      </mat-form-field>
+    </form>
+  </div>
+
+</div>
+
+

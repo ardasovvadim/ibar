@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "mssql2": {
+      "type": "mssql",
+      "connectionId": "DBLoggerContext"
+    },
+    "mssql1": {
+      "type": "mssql",
+      "connectionId": "TradeDbContext"
+    }
+  }
+}

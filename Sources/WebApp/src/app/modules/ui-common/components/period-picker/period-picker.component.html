@@ -1,0 +1,26 @@
+<div class="input-group">
+  <label *ngIf="isInput">Period</label>
+  <div class="wrapper" *ngIf="isInput">
+    <div class="btn date-picker-toggle" (click)="picker.open()">
+      <i class="far fa-calendar"></i>
+    </div>
+    <input [satDatepicker]="picker"
+           [matDatepickerFilter]="myFilter"
+           type="text"
+           class="form-control"
+           [value]="selectedDates"
+           [readOnly]="true"
+           (dateChange)="periodChange()">
+    <sat-datepicker #picker [rangeMode]="rangeMode"></sat-datepicker>
+  </div>
+  <div ngbDropdown class="period-dropdown" *ngIf="isPeriods && isAdaptive">
+    <div ngbDropdownToggle class="btn" id="btn-period-dropdown"></div>
+    <div ngbDropdownMenu class="period-dropdown-menu">
+      <div ngbDropdownItem class="period-dropdown-item btn"
+           *ngFor="let period of periods" (click)="onClickPeriod(period)">{{period.name}}</div>
+    </div>
+  </div>
+  <div class="periods-list" *ngIf="isPeriods" [ngClass]="{'adaptive': isAdaptive}">
+    <a *ngFor="let period of periods" (click)="onClickPeriod(period)">{{period.name}}</a>
+  </div>
+</div>

@@ -1,0 +1,75 @@
+@import "src/sass/general"
+
+h3, h2
+  color: $f-color
+h3
+  font-size: 1.2em
+  font-weight: normal
+  margin: 0
+.chart-title
+  text-transform: uppercase
+
+app-card
+  display: block
+  margin-top: 15px
+
+.chart
+  margin-top: 30px
+
+.color-block
+  background: lightblue
+  width: auto
+  height: 150px
+  margin: 15px 0
+
+.nav-components
+  margin-top: 30px
+  h3
+    margin-bottom: 30px
+  .mat-form-field
+    width: 100%
+  .row
+    margin-top: 15px
+    form mat-form-field.mat-form-field
+      &:nth-of-type(n+2)
+        margin-top: 10px
+
+app-period-picker
+  margin-top: 15px
+
+.portfolio .btn i
+    font-size: 2rem
+
+.pie-charts
+  margin-top: 15px
+  app-pie-block
+    margin: 15px
+
+.clients-traded-symbol
+  mat-form-field.mat-form-field
+    width: auto
+    margin: 15px 20px 0 0
+
+app-open-position-block
+  display: block
+  margin: 0 -15px
+  padding-bottom: 10px
+  position: relative
+  &:not(:first-of-type)
+    padding-top: 30px
+  &:not(:last-of-type):after
+    content: ""
+    display: block
+    position: absolute
+    background: $grey
+    bottom: 0
+    left: 15px
+    right: 15px
+    height: 1px
+
+@media (max-width: $sm)
+  .clients-traded-symbol
+    mat-form-field.mat-form-field
+      width: 100%
+
+

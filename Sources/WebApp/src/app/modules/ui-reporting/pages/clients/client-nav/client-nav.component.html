@@ -1,0 +1,8 @@
+<h2>{{accountHeader.id | checkEmpty}}</h2>
+<h2>{{accountHeader.name | checkEmpty}}</h2>
+<hr>
+<nav>
+  <a [routerLink]="'account'" [routerLinkActive]="'active'">Account</a>
+  <a [routerLink]="'portfolio'" [routerLinkActive]="'active'">Portfolio</a>
+  <a [routerLink]="'trades'" [routerLinkActive]="'active'">Trades</a>
+</nav>

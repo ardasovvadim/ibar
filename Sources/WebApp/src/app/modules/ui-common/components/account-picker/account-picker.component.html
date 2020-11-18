@@ -1,0 +1,6 @@
+<form [formGroup]="form" (change)="onChange()">
+  <select formControlName="selector" class="custom-select" >
+    <option *ngFor="let masterAccount of masterAccounts"
+            [ngValue]="masterAccount">{{resolveName(masterAccount)}}</option>
+  </select>
+</form>

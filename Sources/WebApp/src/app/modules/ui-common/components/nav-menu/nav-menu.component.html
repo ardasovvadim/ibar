@@ -1,0 +1,58 @@
+<app-exception-header [class.ml]="!!user"></app-exception-header>
+<ng-container *ngIf="!!user">
+
+  <app-nav-menu-sidebar></app-nav-menu-sidebar>
+
+  <div class="row nav-menu">
+
+    <app-trade-account-search-box
+      class="col-auto nav-menu-search"
+      [hidden]="!isSearch"
+      #tradeAccountSearchBox
+      (tradeAccountSearchChanged)="searchNameChange($event)"
+      (clearSearchName)="setDefaultMasterAccount()">
+    </app-trade-account-search-box>
+
+    <div class="col-auto nav-menu-title" [hidden]="!pageTitle">
+      <h1>{{pageTitle}}</h1>
+    </div>
+
+    <div class="col-auto nav-menu-accounts" [hidden]="!isMasterAccountPicker">
+      <app-account-picker #masterPicker
+                          (selectedMasterAccountChange)="selectedMasterAccountChange($event)"></app-account-picker>
+    </div>
+
+    <div class="col-auto nav-menu-period-picker" [hidden]="!isRangeDatepicker">
+      <app-period-picker [isAdaptive]="true" (selectedPeriodChange)="selectedPeriodChange($event)"></app-period-picker>
+    </div>
+
+    <div class="col-auto nav-menu-button-navigation" *ngIf="isButtonNavigation">
+      <app-button-navigation></app-button-navigation>
+    </div>
+
+    <div class="col-auto nav-menu-user-block">
+      <div class="wrapper">
+        <a class="user-name font">{{user.email}}</a>
+        <!--            <a class="user-settings" routerLink="accountSettings/{{user.id}}">Account Settings</a>-->
+        <a class="user-settings" routerLink="login" (click)="logOut()">Log out</a>
+      </div>
+      <a>
+        <button class="circle" [matMenuTriggerFor]="userMenu">
+          <i class="fa fa-user"></i>
+        </button>
+        <mat-menu #userMenu="matMenu">
+          <button mat-menu-item routerLink="login" (click)="logOut()">
+            <i class="fas fa-sign-out-alt"></i>
+            <span>Log out</span>
+          </button>
+          <button mat-menu-item (click)="openChangePasswordDialog()">
+            <i class="fas fa-key"></i>
+            <span>Change password</span>
+          </button>
+        </mat-menu>
+      </a>
+    </div>
+  </div>
+
+
+</ng-container>

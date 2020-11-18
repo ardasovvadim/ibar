@@ -1,0 +1,12 @@
+<div class="date-picker d-flex align-items-start">
+  <mat-form-field appearance="outline">
+    <mat-label>Choose a date</mat-label>
+    <input matInput [formControl]="dateControl" [matDatepickerFilter]="filter" [matDatepicker]="picker" (dateChange)="emit()" readonly />
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  <div class="wrapper mt-15" *ngIf="isNavButtons">
+    <button class="mat-button" mat-stroked-button [disabled]="!prevDate" matTooltip="Prev date" (click)="setPrevDate()"><i class="fas fa-arrow-left"></i></button>
+    <button class="mat-button" mat-stroked-button [disabled]="!nextDate" matTooltip="Next date" (click)="setNextDate()"><i class="fas fa-arrow-right"></i></button>
+  </div>
+</div>

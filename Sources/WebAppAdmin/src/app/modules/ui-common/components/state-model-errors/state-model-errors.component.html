@@ -1,0 +1,4 @@
+<div class="errors-container">
+  <p class="error-message" *ngIf="form.invalid">{{resolveCustomErrorMessage()}}</p>
+  <p class="error-message" *ngIf="form.get(controlName).hasError('modelState')">{{resolveModelStateError()}}</p>
+</div>

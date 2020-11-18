@@ -1,0 +1,27 @@
+<div class="list-block">
+  <div class="list-title">
+    <h3>{{title}}</h3>
+  </div>
+  <mat-form-field class="search-field" *ngIf="isSearchName">
+    <mat-label>Filter by name</mat-label>
+    <input autocomplete="off" ng-model-options="{debounce:1000}" [ngModel]="searchName" matInput
+      (keyup)="applyFilter($event)" placeholder="Enter name" >
+  </mat-form-field>
+
+  <div class="example-container">
+   <table *ngIf="source" #table mat-table matSort [dataSource]="source" class="table w-100  table--striped" (matSortChange)="sortData($event)">
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
+      <td mat-cell *matCellDef="let acc" class="cell-header">{{acc.name}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="value">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Count</th>
+      <td mat-cell *matCellDef="let acc">{{acc.value}}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+    <tr mat-row *matRowDef="let file; columns: displayedColumns;"></tr>
+   </table>
+  </div>
+</div>

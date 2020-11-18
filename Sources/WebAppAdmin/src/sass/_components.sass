@@ -1,0 +1,56 @@
+@import "custom-theme"
+
+.btn-group
+  .btn, button
+    &:nth-last-of-type(n+2)
+      margin-right: 15px
+
+.btn
+  background: unset
+  border: unset
+  &:focus
+   outline: none
+.btn--icon
+  opacity: .1
+  transition: all .1s
+  &:hover
+    opacity: 1
+.btn--grey, .btn.btn--grey
+  color: rgba(0, 0, 0, 0.54)
+.btn--green, .btn.btn--green
+  background: $green
+  color: $white
+.btn--red, .btn.btn--red
+  background: $red
+  color: $white
+.btn--blue, .btn.btn--blue
+  background: $blue
+  color: $white
+
+
+.row-controls
+  mat-tab-header.mat-tab-header
+    margin: 0 -45px
+    padding: 0 45px
+    a.mat-tab-label-active
+      color: black
+      opacity: 1
+
+.error-message
+  margin: 0
+  color: mat-color($WebAppAdmin-warn)
+  font-size: .7rem
+
+
+.btn.flat-btn--blue.active
+  background: $n-blue
+  color: white
+.btn.flat-btn--green.active
+  background: $n-green
+  color: white
+
+.filter-row .col-auto
+  > .filter, > div
+    display: inline-block
+    &:not(:last-of-type)
+      margin-right: 15px

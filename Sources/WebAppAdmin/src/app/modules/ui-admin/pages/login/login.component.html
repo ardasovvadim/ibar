@@ -1,0 +1,47 @@
+<div class="login-block mat-elevation-z3">
+
+  <img src="img/mexem_logo.svg" class="logo" alt="">
+
+  <form #formElRef [formGroup]="form" class="custom-form-block" (ngSubmit)="sendCode()">
+
+    <mat-form-field class="mat-form-field blue-form-field" appearance="outline" color="accent">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email" type="email" class="mat-input" autofocus placeholder="Enter email">
+    </mat-form-field>
+    <app-state-model-errors [form]="form"
+                            [submitted]="isSubmitted"
+                            [customErrors]="[
+                              {error: 'required', message: 'Required'},
+                              {error: 'pattern', message: 'Invalid format email'},
+                              {error: 'illegalDomain', message: 'Invalid domain'}
+                            ]"
+                            controlName="email"
+                            [modelState]="modelState">
+    </app-state-model-errors>
+
+    <mat-form-field class="mat-form-field blue-form-field suffix-align-center" appearance="outline">
+      <mat-label>Password</mat-label>
+      <input matInput formControlName="password" [type]="hidePassword ? 'password' : 'text'" class="mat-input"
+             placeholder="Enter password">
+      <button mat-icon-button matSuffix (mousedown)="hidePassword = false" (mouseup)="hidePassword = true">
+        <i class="fas fa-eye" *ngIf="!hidePassword"></i>
+        <i class="fas fa-eye-slash" *ngIf="hidePassword"></i>
+      </button>
+    </mat-form-field>
+    <app-state-model-errors [form]="form"
+                            [submitted]="isSubmitted"
+                            [customErrors]="[
+                              {error: 'required', message: 'Required'}
+                            ]"
+                            controlName="password"
+                            [modelState]="modelState">
+    </app-state-model-errors>
+
+    <p class="error-message" *ngIf="errorMessage">{{errorMessage}}</p>
+
+    <button mat-button type="submit" class="btn--blue" (click)="sendCode()">Login In</button>
+
+  </form>
+
+
+</div>

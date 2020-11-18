@@ -1,0 +1,88 @@
+<div class="nav-menu-col nav-menu-col--bottom">
+  <div class="nav-menu-top">
+    <button class="btn nav-menu-btn" (click)="onClick()">
+      <i class="fa fa-bars"></i>
+    </button>
+  </div>
+  <nav class="nav-menu-body d-flex flex-column">
+    <div class="nav-menu-li" [routerLink]="urlDashboard" [routerLinkActive]="'active'">
+      <div class="wrapper">
+        <i class="fa fa-home"></i>
+      </div>
+    </div>
+    <div class="nav-menu-li" [routerLink]="urlRecentAccounts" [routerLinkActive]="'active'">
+      <div class="wrapper">
+        <i class="fas fa-user-friends"></i>
+      </div>
+    </div>
+    <div class="nav-menu-li" [routerLink]="urlIncome" [routerLinkActive]="'active'">
+      <div class="wrapper">
+        <!--  <img src="assets/icons/user-change.svg" alt="">      <i class="fas fa-user-friends"></i>-->
+        <i class="fas fa-coins"></i>
+
+      </div>
+    </div>
+    <div class="nav-menu-li" [routerLink]="urlTotalAccounts" [routerLinkActive]="'active'">
+      <div class="wrapper">
+        <i class="fas fa-users"></i>
+      </div>
+    </div>
+    <div class="nav-menu-li">
+      <div class="wrapper">
+        <i class="far fa-calendar"></i>
+      </div>
+    </div>
+    <div class="nav-menu-li">
+      <div class="wrapper">
+        <i class="fas fa-cog"></i>
+      </div>
+    </div>
+  </nav>
+</div>
+<div class="nav-menu-col nav-menu-col--up" [class.hidden]="menuIsActive">
+  <div class="nav-menu-top">
+    <button class="btn nav-menu-btn" (click)="onClick()">
+      <i class="fa fa-bars"></i>
+    </button>
+  </div>
+  <nav class="nav-menu-body d-flex flex-column">
+    <div class="nav-menu-li" (click)="closeMenu()" [routerLink]="urlDashboard" [routerLinkActive]="'active'">
+      <div class="wrapper">
+        <i class="fa fa-home"></i>
+      </div>
+      <p>Dashboard</p>
+    </div>
+    <div class="nav-menu-li" (click)="closeMenu()" [routerLink]="urlRecentAccounts" [routerLinkActive]="'active'">
+      <div class="wrapper">
+        <i class="fas fa-user-friends"></i>
+      </div>
+      <p>Recent Accounts</p>
+    </div>
+    <div class="nav-menu-li" (click)="closeMenu()" [routerLink]="urlIncome" [routerLinkActive]="'active'">
+      <div class="wrapper">
+        <i class="fas fa-coins"></i>
+          <!--   <img src="assets/icons/user-change.svg" alt="">
+             <i class="fas fa-user-friends"></i>-->
+      </div>
+      <p>Income</p>
+    </div>
+    <div class="nav-menu-li" (click)="closeMenu()" [routerLink]="urlTotalAccounts" [routerLinkActive]="'active'">
+      <div class="wrapper">
+        <i class="fas fa-users"></i>
+      </div>
+      <p>Total accounts</p>
+    </div>
+    <div class="nav-menu-li" (click)="closeMenu()">
+      <div class="wrapper">
+        <i class="far fa-calendar"></i>
+      </div>
+      <p>Client P/L</p>
+    </div>
+    <div class="nav-menu-li" (click)="closeMenu()">
+      <div class="wrapper">
+        <i class="fas fa-cog"></i>
+      </div>
+      <p>Settings</p>
+    </div>
+  </nav>
+</div>

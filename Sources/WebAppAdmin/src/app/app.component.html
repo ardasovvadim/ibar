@@ -1,0 +1,9 @@
+<div class="container-fluid" [ngClass]="{'overflow-xy--hidden': !isCurrentAdminUser}">
+  <app-exception-header></app-exception-header>
+  <app-header *ngIf="isCurrentAdminUser"></app-header>
+  <main [ngClass]="{'layout-center': !isCurrentAdminUser}">
+    <router-outlet></router-outlet>
+  </main>
+  <app-footer *ngIf="isCurrentAdminUser"></app-footer>
+</div>
+<app-loading></app-loading>

@@ -1,0 +1,9 @@
+<mat-form-field>
+  <mat-label>Enter a date range</mat-label>
+  <mat-date-range-input [rangePicker]="picker" [disabled]="disabled">
+    <input matStartDate placeholder="Start date" [formControl]="startDateControl" [readOnly]="readonly">
+    <input matEndDate placeholder="End date" [formControl]="endDateControl" [readOnly]="readonly">
+  </mat-date-range-input>
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-date-range-picker #picker (closed)="onPeriodChanged()"></mat-date-range-picker>
+</mat-form-field>

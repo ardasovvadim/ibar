@@ -1,0 +1,71 @@
+<div class="custom-form p-0">
+
+  <h1>Edit user</h1>
+
+  <form #formElRef [formGroup]="form" (ngSubmit)="submitForm()">
+
+    <!--  First name field  -->
+    <mat-form-field>
+      <mat-label>First name</mat-label>
+      <input type="text" matInput placeholder="First name" formControlName="firstName"  [value]="user.firstName">
+    </mat-form-field>
+    <app-state-model-errors [form]="form"
+                            [submitted]="isSubmitted"
+                            [customErrors]="[
+                              {error: 'required', message: 'Required'}
+                            ]"
+                            controlName="firstName"
+                            [modelState]="modelState">
+    </app-state-model-errors>
+
+    <!--  Last name field  -->
+    <mat-form-field>
+      <mat-label>Last name</mat-label>
+      <input type="text" matInput
+             placeholder="Last name" formControlName="lastName" [value]="user.lastName">
+    </mat-form-field>
+    <app-state-model-errors [form]="form"
+                            [submitted]="isSubmitted"
+                            controlName="lastName"
+                            [customErrors]="[
+                              {error: 'required', message: 'Required'}
+                            ]"
+                            [modelState]="modelState"></app-state-model-errors>
+
+    <!--  Email field  -->
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input type="email" matInput placeholder="Email" formControlName="email" [value]="user.email">
+    </mat-form-field>
+    <app-state-model-errors [form]="form"
+                            [submitted]="isSubmitted"
+                            controlName="email"
+                            [customErrors]="[
+                              {error: 'required', message: 'Required'},
+                              {error: 'pattern', message: 'Invalid format email'},
+                              {error: 'illegalDomain', message: 'Invalid domain'}
+                            ]"
+                            [modelState]="modelState"></app-state-model-errors>
+
+    <!--  Phone field  -->
+    <mat-form-field>
+      <mat-label>Phone number</mat-label>
+      <input type="tel" matInput placeholder="Phone number" formControlName="phone" [value]="user.phone">
+    </mat-form-field>
+    <app-state-model-errors [form]="form"
+                            [submitted]="isSubmitted"
+                            controlName="phone"
+                            [customErrors]="[
+                              {error: 'required', message: 'Required'},
+                              {error: 'pattern', message: 'Please enter valid phone'}
+                            ]"
+                            [modelState]="modelState"></app-state-model-errors>
+
+    <div class="btn-group">
+      <button mat-button class="btn--red" type="button" (click)="closeDialog(null)">Close</button>
+      <button mat-button class="btn--green" type="submit">Save</button>
+    </div>
+
+  </form>
+
+</div>

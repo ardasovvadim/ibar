@@ -1,0 +1,18 @@
+<div class="btn" (click)="getTradeAccount()">
+  <i class="fa fa-search"></i>
+</div>
+<form #formRef class="mat-custom-form" [formGroup]="form">
+  <input type="text"
+         class="form-control"
+         placeholder="Account Number"
+         aria-label="Search"
+         formControlName="search"
+         [class.c-invalid]="isErrorState()"
+         (keydown.enter)="getTradeAccount()"
+         [(ngModel)]="searchName" />
+  <app-state-model-errors [submitted]="isSubmitted"
+                          [modelState]="modelState"
+                          [customErrors]="[{error: 'required', message: 'Required'}]"
+                          controlName="search"
+                          [form]="form"></app-state-model-errors>
+</form>

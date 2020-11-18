@@ -1,0 +1,12 @@
+<div class="note col-lg-12" [class.note--yellow]="color == colorEnum.YELLOW" [class.note--orange]="color == colorEnum.ORANGE">
+  <div class="controls" *ngIf="isControls">
+    <div class="btn btn--delete" (click)="delete()" matTooltip="Remove note">
+      <i class="fas fa-times"></i>
+    </div>
+  </div>
+    <div class="audit" *ngIf="isAuditBlock">
+      <p *ngIf="tradeNote.createdBy">{{tradeNote.createdBy}}</p>
+      <p *ngIf="tradeNote.createdDate">{{tradeNote.createdDate | datetimeToString}}</p>
+    </div>
+  <textarea cdkTextareaAutosize [readOnly]="isReadonly" [(ngModel)]="tradeNote.text"></textarea>
+</div>

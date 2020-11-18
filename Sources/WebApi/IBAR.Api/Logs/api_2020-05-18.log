@@ -1,0 +1,299 @@
+2020-05-18 13:53:15.8801|ERROR| ----------------------------------------------------------------------------------------------------
+URI: /api/ftp/AddNewFtpCredential
+CONTROLLER NAME: Ftp
+ACTION NAME: AddNewFtpCredential
+PARAMS:
+PARAM NAME: model | PARAM VALUE: IBAR.TradeModel.Business.ViewModels.Response.FtpCredentialModel
+EXCEPTION
+MESSAGE: Unable to set field/property FtpCredentials on entity type System.Data.Entity.DynamicProxies.MasterAccount_18BF5090544BE3A637A021F4E82AC9BCC03898D7BFCD57275F81F44F18D3D15B. See InnerException for details. 
+STACKTRACE:    at System.Data.Entity.Core.Objects.Internal.PocoPropertyAccessorStrategy.CollectionRemove(RelatedEnd relatedEnd, Object value)
+   at System.Data.Entity.Core.Objects.Internal.EntityWrapper`1.CollectionRemove(RelatedEnd relatedEnd, Object value)
+   at System.Data.Entity.Core.Objects.DataClasses.EntityCollection`1.RemoveFromObjectCache(IEntityWrapper wrappedEntity)
+   at System.Data.Entity.Core.Objects.ObjectStateManager.DegradePromotedRelationships()
+   at System.Data.Entity.Core.Objects.DataClasses.RelationshipManager.AddRelatedEntitiesToObjectStateManager(Boolean doAttach)
+   at System.Data.Entity.Core.Objects.ObjectContext.AddObject(String entitySetName, Object entity)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.<>c__DisplayClass17_0.<Add>b__0()
+   at System.Data.Entity.Internal.Linq.InternalSet`1.ActOnSet(Action action, EntityState newState, Object entity, String methodName)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Add(Object entity)
+   at System.Data.Entity.DbSet`1.Add(TEntity entity)
+   at IBAR.TradeModel.DataAccess.Repositories.BaseDataRepository.Add[TEntity](TEntity entity) in C:\Users\vadima\Documents\DevEnv\Workspaces\ibreportingsystem\Sources\WebApi\DataLayer\IBAR.TradeModel.DataAccess\Repositories\BaseDataRepository.cs:line 135
+   at IBAR.TradeModel.DataAccess.Repositories.TDataRepository`1.IBAR.TradeModel.DataAccess.Repositories.ITDataRepository<TEntity>.Add(TEntity entity) in C:\Users\vadima\Documents\DevEnv\Workspaces\ibreportingsystem\Sources\WebApi\DataLayer\IBAR.TradeModel.DataAccess\Repositories\TDataRepository.cs:line 15
+   at IBAR.TradeModel.Business.Internal.FtpService.AddNewFtpCredential(FtpCredentialModel model) in C:\Users\vadima\Documents\DevEnv\Workspaces\ibreportingsystem\Sources\WebApi\BusinessLayer\IBAR.TradeModel.Business\Internal\FtpService.cs:line 49
+   at IBAR.Api.Controllers.FtpController.AddNewFtpCredential(FtpCredentialModel model) in C:\Users\vadima\Documents\DevEnv\Workspaces\ibreportingsystem\Sources\WebApi\IBAR.Api\Controllers\FtpController.cs:line 28
+   at lambda_method(Closure , Object , Object[] )
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass6_2.<GetExecutor>b__2(Object instance, Object[] methodParameters)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.AuthenticationFilterResult.<ExecuteAsync>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__6.MoveNext() 
+INNEREXCEPTION
+MESSAGE: Object reference not set to an instance of an object. 
+STACKTRACE:    at System.Data.Entity.Core.Objects.Internal.PocoPropertyAccessorStrategy.GetDeclaringType(RelatedEnd relatedEnd)
+   at System.Data.Entity.Core.Objects.Internal.PocoPropertyAccessorStrategy.CollectionRemove(RelatedEnd relatedEnd, Object value) 
+
+
+----------------------------------------------------------------------------------------------------
+
+2020-05-18 15:25:04.4759|ERROR| ----------------------------------------------------------------------------------------------------
+URI: /api/ftp/AddNewFtpCredential
+CONTROLLER NAME: Ftp
+ACTION NAME: AddNewFtpCredential
+PARAMS:
+PARAM NAME: model | PARAM VALUE: IBAR.TradeModel.Business.ViewModels.Response.FtpCredentialModel
+EXCEPTION
+MESSAGE: Ftp credential already exists 
+STACKTRACE:    at IBAR.TradeModel.Business.Internal.FtpService.AddNewFtpCredential(FtpCredentialModel model) in C:\Users\vadima\Documents\DevEnv\Workspaces\ibreportingsystem\Sources\WebApi\BusinessLayer\IBAR.TradeModel.Business\Internal\FtpService.cs:line 45
+   at IBAR.Api.Controllers.FtpController.AddNewFtpCredential(FtpCredentialModel model) in C:\Users\vadima\Documents\DevEnv\Workspaces\ibreportingsystem\Sources\WebApi\IBAR.Api\Controllers\FtpController.cs:line 28
+   at lambda_method(Closure , Object , Object[] )
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass6_2.<GetExecutor>b__2(Object instance, Object[] methodParameters)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.AuthenticationFilterResult.<ExecuteAsync>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__6.MoveNext() 
+
+----------------------------------------------------------------------------------------------------
+
+2020-05-18 19:21:57.7473|ERROR| ----------------------------------------------------------------------------------------------------
+URI: /api/ftp/UpdateFtpCredential
+CONTROLLER NAME: Ftp
+ACTION NAME: UpdateFtpCredential
+PARAMS:
+PARAM NAME: model | PARAM VALUE: IBAR.TradeModel.Business.ViewModels.Response.FtpCredentialModel
+EXCEPTION
+MESSAGE: An error occurred while updating the entries. See the inner exception for details. 
+STACKTRACE:    at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   at System.Data.Entity.DbContext.SaveChanges()
+   at IBAR.TradeModel.DataAccess.Repositories.BaseDataRepository.Save() in C:\Users\vadima\Documents\DevEnv\Workspaces\ibreportingsystem\Sources\WebApi\DataLayer\IBAR.TradeModel.DataAccess\Repositories\BaseDataRepository.cs:line 56
+   at IBAR.TradeModel.DataAccess.Repositories.BaseDataRepository.Update[TEntity](TEntity entity) in C:\Users\vadima\Documents\DevEnv\Workspaces\ibreportingsystem\Sources\WebApi\DataLayer\IBAR.TradeModel.DataAccess\Repositories\BaseDataRepository.cs:line 153
+   at IBAR.TradeModel.DataAccess.Repositories.TDataRepository`1.IBAR.TradeModel.DataAccess.Repositories.ITDataRepository<TEntity>.Update(TEntity entity) in C:\Users\vadima\Documents\DevEnv\Workspaces\ibreportingsystem\Sources\WebApi\DataLayer\IBAR.TradeModel.DataAccess\Repositories\TDataRepository.cs:line 20
+   at IBAR.TradeModel.Business.Internal.FtpService.UpdateFtpCredential(FtpCredentialModel model) in C:\Users\vadima\Documents\DevEnv\Workspaces\ibreportingsystem\Sources\WebApi\BusinessLayer\IBAR.TradeModel.Business\Internal\FtpService.cs:line 107
+   at IBAR.Api.Controllers.FtpController.UpdateFtpCredential(FtpCredentialModel model) in C:\Users\vadima\Documents\DevEnv\Workspaces\ibreportingsystem\Sources\WebApi\IBAR.Api\Controllers\FtpController.cs:line 43
+   at lambda_method(Closure , Object , Object[] )
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass6_2.<GetExecutor>b__2(Object instance, Object[] methodParameters)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.AuthenticationFilterResult.<ExecuteAsync>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__6.MoveNext() 
+INNEREXCEPTION
+MESSAGE: An error occurred while updating the entries. See the inner exception for details. 
+STACKTRACE:    at System.Data.Entity.Core.Mapping.Update.Internal.UpdateTranslator.Update()
+   at System.Data.Entity.Core.EntityClient.Internal.EntityAdapter.<>c.<Update>b__21_0(UpdateTranslator ut)
+   at System.Data.Entity.Core.EntityClient.Internal.EntityAdapter.Update[T](T noChangesResult, Func`2 updateFunction)
+   at System.Data.Entity.Core.EntityClient.Internal.EntityAdapter.Update()
+   at System.Data.Entity.Core.Objects.ObjectContext.<SaveChangesToStore>b__153_0()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesToStore(SaveOptions options, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction)
+   at System.Data.Entity.Core.Objects.ObjectContext.<>c__DisplayClass148_0.<SaveChangesInternal>b__0()
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChanges(SaveOptions options)
+   at System.Data.Entity.Internal.InternalContext.SaveChanges() 
+INNEREXCEPTION
+MESSAGE: Cannot update a timestamp column. 
+STACKTRACE:    at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.<>c.<NonQuery>b__4_0(DbCommand t, DbCommandInterceptionContext`1 c)
+   at System.Data.Entity.Infrastructure.Interception.InternalDispatcher`1.Dispatch[TTarget,TInterceptionContext,TResult](TTarget target, Func`3 operation, TInterceptionContext interceptionContext, Action`3 executing, Action`3 executed)
+   at System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.NonQuery(DbCommand command, DbCommandInterceptionContext interceptionContext)
+   at System.Data.Entity.Internal.InterceptableDbCommand.ExecuteNonQuery()
+   at System.Data.Entity.Core.Mapping.Update.Internal.DynamicUpdateCommand.Execute(Dictionary`2 identifierValues, List`1 generatedValues)
+   at System.Data.Entity.Core.Mapping.Update.Internal.UpdateTranslator.Update() 
+
+
+
+----------------------------------------------------------------------------------------------------
+
+2020-05-18 19:22:00.8055|ERROR| ----------------------------------------------------------------------------------------------------
+URI: /api/ftp/UpdateFtpCredential
+CONTROLLER NAME: Ftp
+ACTION NAME: UpdateFtpCredential
+PARAMS:
+PARAM NAME: model | PARAM VALUE: IBAR.TradeModel.Business.ViewModels.Response.FtpCredentialModel
+EXCEPTION
+MESSAGE: An error occurred while updating the entries. See the inner exception for details. 
+STACKTRACE:    at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   at System.Data.Entity.DbContext.SaveChanges()
+   at IBAR.TradeModel.DataAccess.Repositories.BaseDataRepository.Save() in C:\Users\vadima\Documents\DevEnv\Workspaces\ibreportingsystem\Sources\WebApi\DataLayer\IBAR.TradeModel.DataAccess\Repositories\BaseDataRepository.cs:line 56
+   at IBAR.TradeModel.DataAccess.Repositories.BaseDataRepository.Update[TEntity](TEntity entity) in C:\Users\vadima\Documents\DevEnv\Workspaces\ibreportingsystem\Sources\WebApi\DataLayer\IBAR.TradeModel.DataAccess\Repositories\BaseDataRepository.cs:line 153
+   at IBAR.TradeModel.DataAccess.Repositories.TDataRepository`1.IBAR.TradeModel.DataAccess.Repositories.ITDataRepository<TEntity>.Update(TEntity entity) in C:\Users\vadima\Documents\DevEnv\Workspaces\ibreportingsystem\Sources\WebApi\DataLayer\IBAR.TradeModel.DataAccess\Repositories\TDataRepository.cs:line 20
+   at IBAR.TradeModel.Business.Internal.FtpService.UpdateFtpCredential(FtpCredentialModel model) in C:\Users\vadima\Documents\DevEnv\Workspaces\ibreportingsystem\Sources\WebApi\BusinessLayer\IBAR.TradeModel.Business\Internal\FtpService.cs:line 107
+   at IBAR.Api.Controllers.FtpController.UpdateFtpCredential(FtpCredentialModel model) in C:\Users\vadima\Documents\DevEnv\Workspaces\ibreportingsystem\Sources\WebApi\IBAR.Api\Controllers\FtpController.cs:line 43
+   at lambda_method(Closure , Object , Object[] )
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass6_2.<GetExecutor>b__2(Object instance, Object[] methodParameters)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.AuthenticationFilterResult.<ExecuteAsync>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__6.MoveNext() 
+INNEREXCEPTION
+MESSAGE: An error occurred while updating the entries. See the inner exception for details. 
+STACKTRACE:    at System.Data.Entity.Core.Mapping.Update.Internal.UpdateTranslator.Update()
+   at System.Data.Entity.Core.EntityClient.Internal.EntityAdapter.<>c.<Update>b__21_0(UpdateTranslator ut)
+   at System.Data.Entity.Core.EntityClient.Internal.EntityAdapter.Update[T](T noChangesResult, Func`2 updateFunction)
+   at System.Data.Entity.Core.EntityClient.Internal.EntityAdapter.Update()
+   at System.Data.Entity.Core.Objects.ObjectContext.<SaveChangesToStore>b__153_0()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesToStore(SaveOptions options, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction)
+   at System.Data.Entity.Core.Objects.ObjectContext.<>c__DisplayClass148_0.<SaveChangesInternal>b__0()
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChanges(SaveOptions options)
+   at System.Data.Entity.Internal.InternalContext.SaveChanges() 
+INNEREXCEPTION
+MESSAGE: Cannot update a timestamp column. 
+STACKTRACE:    at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.<>c.<NonQuery>b__4_0(DbCommand t, DbCommandInterceptionContext`1 c)
+   at System.Data.Entity.Infrastructure.Interception.InternalDispatcher`1.Dispatch[TTarget,TInterceptionContext,TResult](TTarget target, Func`3 operation, TInterceptionContext interceptionContext, Action`3 executing, Action`3 executed)
+   at System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.NonQuery(DbCommand command, DbCommandInterceptionContext interceptionContext)
+   at System.Data.Entity.Internal.InterceptableDbCommand.ExecuteNonQuery()
+   at System.Data.Entity.Core.Mapping.Update.Internal.DynamicUpdateCommand.Execute(Dictionary`2 identifierValues, List`1 generatedValues)
+   at System.Data.Entity.Core.Mapping.Update.Internal.UpdateTranslator.Update() 
+
+
+
+----------------------------------------------------------------------------------------------------
+
+2020-05-18 19:22:11.3112|ERROR| ----------------------------------------------------------------------------------------------------
+URI: /api/ftp/UpdateFtpCredential
+CONTROLLER NAME: Ftp
+ACTION NAME: UpdateFtpCredential
+PARAMS:
+PARAM NAME: model | PARAM VALUE: IBAR.TradeModel.Business.ViewModels.Response.FtpCredentialModel
+EXCEPTION
+MESSAGE: An error occurred while updating the entries. See the inner exception for details. 
+STACKTRACE:    at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   at System.Data.Entity.DbContext.SaveChanges()
+   at IBAR.TradeModel.DataAccess.Repositories.BaseDataRepository.Save() in C:\Users\vadima\Documents\DevEnv\Workspaces\ibreportingsystem\Sources\WebApi\DataLayer\IBAR.TradeModel.DataAccess\Repositories\BaseDataRepository.cs:line 56
+   at IBAR.TradeModel.DataAccess.Repositories.BaseDataRepository.Update[TEntity](TEntity entity) in C:\Users\vadima\Documents\DevEnv\Workspaces\ibreportingsystem\Sources\WebApi\DataLayer\IBAR.TradeModel.DataAccess\Repositories\BaseDataRepository.cs:line 153
+   at IBAR.TradeModel.DataAccess.Repositories.TDataRepository`1.IBAR.TradeModel.DataAccess.Repositories.ITDataRepository<TEntity>.Update(TEntity entity) in C:\Users\vadima\Documents\DevEnv\Workspaces\ibreportingsystem\Sources\WebApi\DataLayer\IBAR.TradeModel.DataAccess\Repositories\TDataRepository.cs:line 20
+   at IBAR.TradeModel.Business.Internal.FtpService.UpdateFtpCredential(FtpCredentialModel model) in C:\Users\vadima\Documents\DevEnv\Workspaces\ibreportingsystem\Sources\WebApi\BusinessLayer\IBAR.TradeModel.Business\Internal\FtpService.cs:line 107
+   at IBAR.Api.Controllers.FtpController.UpdateFtpCredential(FtpCredentialModel model) in C:\Users\vadima\Documents\DevEnv\Workspaces\ibreportingsystem\Sources\WebApi\IBAR.Api\Controllers\FtpController.cs:line 43
+   at lambda_method(Closure , Object , Object[] )
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass6_2.<GetExecutor>b__2(Object instance, Object[] methodParameters)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.AuthenticationFilterResult.<ExecuteAsync>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__6.MoveNext() 
+INNEREXCEPTION
+MESSAGE: An error occurred while updating the entries. See the inner exception for details. 
+STACKTRACE:    at System.Data.Entity.Core.Mapping.Update.Internal.UpdateTranslator.Update()
+   at System.Data.Entity.Core.EntityClient.Internal.EntityAdapter.<>c.<Update>b__21_0(UpdateTranslator ut)
+   at System.Data.Entity.Core.EntityClient.Internal.EntityAdapter.Update[T](T noChangesResult, Func`2 updateFunction)
+   at System.Data.Entity.Core.EntityClient.Internal.EntityAdapter.Update()
+   at System.Data.Entity.Core.Objects.ObjectContext.<SaveChangesToStore>b__153_0()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesToStore(SaveOptions options, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction)
+   at System.Data.Entity.Core.Objects.ObjectContext.<>c__DisplayClass148_0.<SaveChangesInternal>b__0()
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChanges(SaveOptions options)
+   at System.Data.Entity.Internal.InternalContext.SaveChanges() 
+INNEREXCEPTION
+MESSAGE: Cannot update a timestamp column. 
+STACKTRACE:    at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.<>c.<NonQuery>b__4_0(DbCommand t, DbCommandInterceptionContext`1 c)
+   at System.Data.Entity.Infrastructure.Interception.InternalDispatcher`1.Dispatch[TTarget,TInterceptionContext,TResult](TTarget target, Func`3 operation, TInterceptionContext interceptionContext, Action`3 executing, Action`3 executed)
+   at System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.NonQuery(DbCommand command, DbCommandInterceptionContext interceptionContext)
+   at System.Data.Entity.Internal.InterceptableDbCommand.ExecuteNonQuery()
+   at System.Data.Entity.Core.Mapping.Update.Internal.DynamicUpdateCommand.Execute(Dictionary`2 identifierValues, List`1 generatedValues)
+   at System.Data.Entity.Core.Mapping.Update.Internal.UpdateTranslator.Update() 
+
+
+
+----------------------------------------------------------------------------------------------------
+

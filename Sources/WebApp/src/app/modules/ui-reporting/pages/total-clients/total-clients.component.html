@@ -1,0 +1,91 @@
+<div class="row align-items-start justify-content-center align-items-stretch">
+  <app-card class="col-lg-4 col-md-6" title="Total clients" format="string" [iconClass]="'fas fa-users'"
+    [chartType]='cardType.TOTAL_CLIENTS' [totalValue]="totals[cardType.TOTAL_CLIENTS]">
+  </app-card>
+
+  <app-card class="col-lg-4 col-md-6" format="string" title="New clients LD" [iconClass]="'fas fa-users'"
+    [chartType]='cardType.NEW_CLIENTS_LD' [totalValue]="totals[cardType.NEW_CLIENTS_LD]">
+  </app-card>
+  <app-card class="col-lg-4 col-md-6" format="string" title="New clients MTD" [iconClass]="'fas fa-users'"
+    [chartType]='cardType.NEW_CLIENTS_MTD' [totalValue]="totals[cardType.NEW_CLIENTS_MTD]">
+  </app-card>
+</div>
+<div class="space">
+</div>
+
+<table #table mat-table matSort [dataSource]="tableData" class="w-100 table table--striped">
+
+  <!-- Account Name Column -->
+  <ng-container matColumnDef="accountName">
+    <th mat-header-cell *matHeaderCellDef></th>
+    <td mat-cell *matCellDef="let acc" class="cell-header">{{acc.rowName}}</td>
+  </ng-container>
+
+  <!-- Date Last Day Column -->
+  <ng-container matColumnDef="lastDay">
+    <th mat-header-cell *matHeaderCellDef>Last Day</th>
+    <td mat-cell *matCellDef="let acc">{{acc.lastDay}}</td>
+  </ng-container>
+
+  <!-- MTD Column -->
+  <ng-container matColumnDef="mtd">
+    <th mat-header-cell *matHeaderCellDef>MTD</th>
+    <td mat-cell *matCellDef="let acc">{{acc.mtd}}</td>
+  </ng-container>
+
+  <!-- Last Month Column -->
+  <ng-container matColumnDef="lastMonth">
+    <th mat-header-cell *matHeaderCellDef>Last Month</th>
+    <td mat-cell *matCellDef="let acc">{{acc.lastMonth}}</td>
+  </ng-container>
+
+  <!-- AVGDaily Column -->
+  <ng-container matColumnDef="avgDaily">
+    <th mat-header-cell *matHeaderCellDef>M.AVG Daily</th>
+    <td mat-cell *matCellDef="let acc">{{acc.avgDailyMonth}}</td>
+  </ng-container>
+
+  <!-- 12AVGDaily Column -->
+  <ng-container matColumnDef="mAvgDaily">
+    <th mat-header-cell *matHeaderCellDef>12M.AVG Daily</th>
+    <td mat-cell *matCellDef="let acc">{{acc.avgDailyYear}}</td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let file; columns: displayedColumns;"></tr>
+</table>
+
+<div class="row block lists-block">
+
+
+  <div class="col-md-6">
+    <app-list (listNameChanged)="getListName(listType.CITY_LIST, $event)"
+              [data]="listData[listType.CITY_LIST]" [title]="'City list'" [isSearchName]="true"></app-list>
+  </div>
+
+  <div class="col-md-6">
+    <app-list (listNameChanged)="getListName(listType.COUNTRY_LIST,$event)"
+              [data]="listData[listType.COUNTRY_LIST]" [title]="'Country list'" [isSearchName]="true"></app-list>
+  </div>
+
+  <div class="col-md-6">
+    <app-list (listNameChanged)="getListName(listType.ACCOUNT_CAPABILITIES_LIST,$event)"
+              [data]="listData[listType.ACCOUNT_CAPABILITIES_LIST]" title="Account Capabilities list" [isSearchName]="true"></app-list>
+  </div>
+
+  <div class="col-md-6">
+    <app-list (listNameChanged)="getListName(listType.ACCOUNT_TYPE_LIST,$event)"
+              [data]="listData[listType.ACCOUNT_TYPE_LIST]" title="Account type list" [isSearchName]="true"></app-list>
+  </div>
+
+  <div class="col-md-6">
+    <app-list (listNameChanged)="getListName(listType.IB_ENTITY_LIST,$event)"
+              [data]="listData[listType.IB_ENTITY_LIST]" title="Ib entity List" [isSearchName]="true"></app-list>
+  </div>
+
+  <div class="col-md-6">
+    <app-list (listNameChanged)="getListName(listType.BASE_CURRENCY_LIST,$event)"
+              [data]="listData[listType.BASE_CURRENCY_LIST]" title="Base currency list" [isSearchName]="true"></app-list>
+  </div>
+
+</div>

@@ -1,0 +1,25 @@
+@import "general"
+
+.container-fluid
+  transition: padding-left .4s
+  padding-left: $nav-menu-width
+  padding-right: 0
+  padding-top: $nav-menu-height
+  position: relative
+
+@media (min-width: $breakpoint-menu)
+  .container-fluid
+    padding-left: $nav-menu-width-collapse
+
+main
+  padding: 30px
+  overflow-x: hidden
+  position: relative
+
+app-nav-menu
+  display: block
+  position: fixed
+  left: 0
+  right: 0
+  top: 0
+  z-index: 999

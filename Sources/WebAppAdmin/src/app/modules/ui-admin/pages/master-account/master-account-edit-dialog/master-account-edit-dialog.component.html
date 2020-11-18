@@ -1,0 +1,43 @@
+<div class="custom-form p-0">
+
+  <h1>Edit master account</h1>
+
+  <form #formElRef [formGroup]="form" (ngSubmit)="submitForm()">
+
+    <!--  Account name field -->
+    <mat-form-field>
+      <mat-label>Account name</mat-label>
+      <input type="text" matInput placeholder="Account name" formControlName="accountName" [value]="masterAccount.accountName">
+    </mat-form-field>
+    <app-state-model-errors [form]="form"
+                            [submitted]="isSubmitted"
+                            [customErrors]="[
+                              {error: 'required', message: 'Required'},
+                              {error: 'pattern', message: 'Invalid account name'}
+                            ]"
+                            controlName="accountName"
+                            [modelState]="modelState">
+    </app-state-model-errors>
+
+    <!--  Account Alias field  -->
+    <mat-form-field>
+      <mat-label>Account alias</mat-label>
+      <input type="text" matInput placeholder="Account alias" formControlName="accountAlias" [value]="masterAccount.accountAlias">
+    </mat-form-field>
+    <app-state-model-errors [form]="form"
+                            [submitted]="isSubmitted"
+                            [customErrors]="[
+                              {error: 'required', message: 'Required'}
+                            ]"
+                            controlName="accountAlias"
+                            [modelState]="modelState">
+    </app-state-model-errors>
+
+    <div class="btn-group block">
+      <button mat-button class="btn--red" type="button" (click)="closeDialog(null)">Close</button>
+      <button mat-button class="btn--green" type="submit">Save</button>
+    </div>
+
+  </form>
+
+</div>

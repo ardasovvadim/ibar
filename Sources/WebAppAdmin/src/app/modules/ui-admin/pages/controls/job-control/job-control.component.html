@@ -1,0 +1,27 @@
+<div class="col-12 block btn-group">
+  <mat-card class="console mat-elevation-z4">
+    <div class="top">
+      <div class="btn-group">
+        <button class="btn btn--green" (click)="startJob()"
+                [disabled]="isDisabledStartButton()">
+          <i class="fas fa-play"></i>
+        </button>
+        <button class="btn btn--red" (click)="stopJob()"
+                [disabled]="isDisabledStopButton()">
+          <i class="fas fa-stop"></i>
+        </button>
+        <button class="btn btn--green" (click)="reloadJob()" [disabled]="isDisabledReloadButton()"><i class="fas fa-redo-alt"></i></button>
+      </div>
+      <div class="separator"></div>
+      <p class="d-inline">Status: {{getStatusString()}}</p>
+    </div>
+    <div class="output">
+      <div class="line" *ngFor="let log of logs;">
+        <p class="lien-time">[Syncer]</p>
+        <p class="line-body">{{log.message}}</p>
+        <a [href]="log.link" *ngIf="log.link" >{{log.link}}</a>
+      </div>
+    </div>
+  </mat-card>
+</div>
+

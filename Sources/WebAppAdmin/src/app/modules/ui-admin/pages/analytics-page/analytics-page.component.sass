@@ -1,0 +1,27 @@
+@import "custom-theme"
+
+hr
+  display: block
+  margin: 15px 0
+
+.card
+  @extend .mat-elevation-z4
+  border-radius: 10px
+  padding: 15px
+  //&:not(:last-of-type)
+  //  margin-bottom: 30px
+  //&:not(:first-of-type)
+  //  margin-top: 15px
+  .p-row
+    display: flex
+    justify-content: space-between
+    p
+      margin: 0
+    &:not(:last-of-type)
+      margin-bottom: 10px
+  h2
+    font-size: 1.3rem
+    font-weight: 500
+    margin: 0 0 15px
+
+

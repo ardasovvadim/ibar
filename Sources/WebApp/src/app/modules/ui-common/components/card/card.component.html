@@ -1,0 +1,10 @@
+<div class="business-card d-flex justify-content-start align-items-center" [class.clickable]="isClickable">
+  <div class="text">
+    <h3>{{title}}</h3>
+    <p *ngIf="format === 'string'">{{totalValue}}</p>
+    <p *ngIf="format === 'money'">{{totalValue | currency | customCurrency}}</p>
+  </div>
+  <div class="icon">
+    <i [classList]="iconClass"></i>
+  </div>
+</div>

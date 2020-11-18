@@ -1,0 +1,24 @@
+@import "src/sass/general"
+
+.colors
+  padding: 10px 0
+  p
+    margin: 0 10px 0 0
+  > div
+    display: inline-block
+    width: 15px
+    height: 15px
+    border: $border-grey-style
+    &:not(:last-of-type)
+      margin-right: 10px
+  .orange
+    background: $note-bg-orange
+  .yellow
+    background: $note-bg-yellow
+
+.btns-group
+  margin-top: 30px
+
+>app-note
+  max-height: 100px
+  resize: none

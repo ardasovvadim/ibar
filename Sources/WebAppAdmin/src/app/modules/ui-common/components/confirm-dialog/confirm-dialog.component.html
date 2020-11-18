@@ -1,0 +1,12 @@
+<div class="row message">
+  <div class="col-12 message-header">
+    <h3>{{data.header}}</h3>
+  </div>
+  <div class="col-12 message-body">
+    <p>{{data.message}}</p>
+  </div>
+  <div class="col-12 d-flex justify-content-center message-bottom">
+    <button mat-stroked-button (click)="confirm(true)">Yes</button>
+    <button mat-stroked-button (click)="confirm(false)">No</button>
+  </div>
+</div>

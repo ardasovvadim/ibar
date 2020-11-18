@@ -1,0 +1,27 @@
+<div class="login-block mat-elevation-z3">
+
+  <img src="img/mexem_logo.svg" class="logo" alt="">
+  <p>Please enter your code</p>
+
+  <form #formElRef [formGroup]="form" class="custom-form-block state-matcher" autocomplete="off" (ngSubmit)="confirmLogin()">
+
+    <mat-form-field class="mat-form-field blue-form-field" appearance="outline" color="accent">
+      <mat-label>Code</mat-label>
+      <input matInput formControlName="phoneCode" type="text" class="mat-input" placeholder="Enter code" autofocus>
+    </mat-form-field>
+    <app-state-model-errors [form]="form"
+                            [submitted]="isSubmitted"
+                            [customErrors]="[
+                              {error: 'required', message: 'Required'},
+                              {error: 'pattern', message: 'Please enter valid 6-digit code'}
+                            ]"
+                            controlName="phoneCode"
+                            [modelState]="modelState">
+    </app-state-model-errors>
+
+    <button type="submit" mat-button class="btn--blue">Confirm login</button>
+
+  </form>
+
+
+</div>

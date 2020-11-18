@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_PublishTargetUrl>C:\inetpub\wwwroot\WebApi</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/Autofac.dll">
+      <publishTime>02/16/2020 14:35:56</publishTime>
+    </File>
+    <File Include="bin/Autofac.Integration.Owin.dll">
+      <publishTime>01/31/2020 20:24:14</publishTime>
+    </File>
+    <File Include="bin/Autofac.Integration.SignalR.dll">
+      <publishTime>02/03/2020 22:25:52</publishTime>
+    </File>
+    <File Include="bin/Autofac.Integration.WebApi.dll">
+      <publishTime>01/30/2020 23:07:12</publishTime>
+    </File>
+    <File Include="bin/Autofac.Integration.WebApi.Owin.dll">
+      <publishTime>01/31/2020 23:54:42</publishTime>
+    </File>
+    <File Include="bin/Autofac.Integration.WebApi.pdb">
+      <publishTime>01/30/2020 23:07:12</publishTime>
+    </File>
+    <File Include="bin/Autofac.pdb">
+      <publishTime>02/16/2020 14:35:56</publishTime>
+    </File>
+    <File Include="bin/AutoMapper.Contrib.Autofac.DependencyInjection.dll">
+      <publishTime>02/22/2020 06:39:08</publishTime>
+    </File>
+    <File Include="bin/AutoMapper.Contrib.Autofac.DependencyInjection.pdb">
+      <publishTime>02/22/2020 06:39:08</publishTime>
+    </File>
+    <File Include="bin/AutoMapper.dll">
+      <publishTime>08/12/2019 12:42:04</publishTime>
+    </File>
+    <File Include="bin/AutoMapper.pdb">
+      <publishTime>08/12/2019 12:42:04</publishTime>
+    </File>
+    <File Include="bin/BouncyCastle.Crypto.dll">
+      <publishTime>04/21/2020 17:24:48</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>11/16/2019 03:00:22</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.SqlServer.dll">
+      <publishTime>11/16/2019 03:00:40</publishTime>
+    </File>
+    <File Include="bin/IBAR.Api.dll">
+      <publishTime>07/27/2020 11:04:29</publishTime>
+    </File>
+    <File Include="bin/IBAR.Api.pdb">
+      <publishTime>06/03/2020 17:13:04</publishTime>
+    </File>
+    <File Include="bin/IBAR.DataLayer.dll">
+      <publishTime>05/04/2020 15:24:41</publishTime>
+    </File>
+    <File Include="bin/IBAR.DataLayer.dll.config">
+      <publishTime>04/21/2020 17:24:48</publishTime>
+    </File>
+    <File Include="bin/IBAR.DataLayer.pdb">
+      <publishTime>05/04/2020 15:24:41</publishTime>
+    </File>
+    <File Include="bin/IBAR.ServiceLayer.dll">
+      <publishTime>05/04/2020 16:53:34</publishTime>
+    </File>
+    <File Include="bin/IBAR.ServiceLayer.dll.config">
+      <publishTime>04/21/2020 18:32:52</publishTime>
+    </File>
+    <File Include="bin/IBAR.ServiceLayer.pdb">
+      <publishTime>05/04/2020 16:53:34</publishTime>
+    </File>
+    <File Include="bin/IBAR.St.Toolkit.dll">
+      <publishTime>07/21/2020 16:43:23</publishTime>
+    </File>
+    <File Include="bin/IBAR.St.Toolkit.pdb">
+      <publishTime>07/21/2020 16:43:23</publishTime>
+    </File>
+    <File Include="bin/IBAR.TradeModel.Business.dll">
+      <publishTime>07/27/2020 11:04:29</publishTime>
+    </File>
+    <File Include="bin/IBAR.TradeModel.Business.dll.config">
+      <publishTime>06/12/2020 16:06:58</publishTime>
+    </File>
+    <File Include="bin/IBAR.TradeModel.Business.pdb">
+      <publishTime>06/03/2020 17:13:04</publishTime>
+    </File>
+    <File Include="bin/IBAR.TradeModel.Data.dll">
+      <publishTime>07/27/2020 11:04:28</publishTime>
+    </File>
+    <File Include="bin/IBAR.TradeModel.Data.dll.config">
+      <publishTime>04/21/2020 17:24:48</publishTime>
+    </File>
+    <File Include="bin/IBAR.TradeModel.Data.pdb">
+      <publishTime>06/03/2020 17:13:03</publishTime>
+    </File>
+    <File Include="bin/IBAR.TradeModel.DataAccess.dll">
+      <publishTime>05/04/2020 16:53:33</publishTime>
+    </File>
+    <File Include="bin/IBAR.TradeModel.DataAccess.dll.config">
+      <publishTime>04/21/2020 17:24:48</publishTime>
+    </File>
+    <File Include="bin/IBAR.TradeModel.DataAccess.pdb">
+      <publishTime>05/04/2020 16:53:33</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.SignalR.Core.dll">
+      <publishTime>04/03/2019 00:30:56</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.SignalR.Core.pdb">
+      <publishTime>04/03/2019 07:19:50</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.SignalR.Owin.dll">
+      <publishTime>08/19/2014 20:13:24</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.SignalR.SystemWeb.dll">
+      <publishTime>04/03/2019 00:30:56</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.SignalR.SystemWeb.pdb">
+      <publishTime>04/03/2019 07:20:50</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Azure.KeyVault.Core.dll">
+      <publishTime>07/29/2015 12:56:38</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Azure.Storage.Blob.dll">
+      <publishTime>05/05/2020 15:04:10</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Azure.Storage.Common.dll">
+      <publishTime>05/05/2020 15:04:08</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Bcl.AsyncInterfaces.dll">
+      <publishTime>11/15/2019 08:38:12</publishTime>
+    </File>
+    <File Include="bin/Microsoft.IdentityModel.JsonWebTokens.dll">
+      <publishTime>10/05/2018 19:35:36</publishTime>
+    </File>
+    <File Include="bin/Microsoft.IdentityModel.JsonWebTokens.pdb">
+      <publishTime>10/05/2018 19:26:06</publishTime>
+    </File>
+    <File Include="bin/Microsoft.IdentityModel.Logging.dll">
+      <publishTime>10/18/2019 23:40:18</publishTime>
+    </File>
+    <File Include="bin/Microsoft.IdentityModel.Tokens.dll">
+      <publishTime>10/18/2019 23:44:00</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Cors.dll">
+      <publishTime>11/12/2019 18:48:14</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.dll">
+      <publishTime>11/12/2019 18:46:02</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Host.SystemWeb.dll">
+      <publishTime>11/12/2019 18:47:54</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.dll">
+      <publishTime>11/12/2019 18:45:42</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.Jwt.dll">
+      <publishTime>11/12/2019 18:46:14</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.OAuth.dll">
+      <publishTime>11/12/2019 18:45:44</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>11/09/2019 00:56:44</publishTime>
+    </File>
+    <File Include="bin/NLog.config">
+      <publishTime>06/30/2020 11:50:12</publishTime>
+    </File>
+    <File Include="bin/NLog.dll">
+      <publishTime>05/18/2020 20:28:32</publishTime>
+    </File>
+    <File Include="bin/Owin.dll">
+      <publishTime>11/13/2012 12:19:34</publishTime>
+    </File>
+    <File Include="bin/PGPSnippet.dll">
+      <publishTime>04/21/2020 17:24:48</publishTime>
+    </File>
+    <File Include="bin/PhoneNumbers.dll">
+      <publishTime>03/03/2020 16:38:58</publishTime>
+    </File>
+    <File Include="bin/PhoneNumbersCore.dll">
+      <publishTime>12/03/2016 16:32:52</publishTime>
+    </File>
+    <File Include="bin/System.Buffers.dll">
+      <publishTime>07/19/2017 10:01:28</publishTime>
+    </File>
+    <File Include="bin/System.Collections.Immutable.dll">
+      <publishTime>09/13/2019 02:27:58</publishTime>
+    </File>
+    <File Include="bin/System.IdentityModel.Tokens.Jwt.dll">
+      <publishTime>10/05/2018 19:34:54</publishTime>
+    </File>
+    <File Include="bin/System.IdentityModel.Tokens.Jwt.pdb">
+      <publishTime>10/05/2018 19:26:08</publishTime>
+    </File>
+    <File Include="bin/System.Memory.dll">
+      <publishTime>04/17/2019 16:24:34</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.Formatting.dll">
+      <publishTime>11/28/2018 13:00:36</publishTime>
+    </File>
+    <File Include="bin/System.Numerics.Vectors.dll">
+      <publishTime>07/19/2017 10:01:36</publishTime>
+    </File>
+    <File Include="bin/System.Runtime.CompilerServices.Unsafe.dll">
+      <publishTime>11/15/2019 08:37:58</publishTime>
+    </File>
+    <File Include="bin/System.Threading.Tasks.Extensions.dll">
+      <publishTime>11/21/2018 17:48:50</publishTime>
+    </File>
+    <File Include="bin/System.Web.Cors.dll">
+      <publishTime>11/28/2018 12:58:44</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.Cors.dll">
+      <publishTime>11/28/2018 13:01:26</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.dll">
+      <publishTime>11/28/2018 13:01:00</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.Owin.dll">
+      <publishTime>11/28/2018 13:01:48</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.WebHost.dll">
+      <publishTime>11/28/2018 13:02:56</publishTime>
+    </File>
+    <File Include="bin/Twilio.dll">
+      <publishTime>03/04/2020 21:55:34</publishTime>
+    </File>
+    <File Include="bin/Web.config">
+      <publishTime>07/21/2020 16:43:25</publishTime>
+    </File>
+    <File Include="bin/Web.Debug.config">
+      <publishTime>04/21/2020 17:24:48</publishTime>
+    </File>
+    <File Include="bin/Web.Production.config">
+      <publishTime>07/17/2020 17:55:05</publishTime>
+    </File>
+    <File Include="bin/Web.Release.config">
+      <publishTime>06/24/2020 11:34:59</publishTime>
+    </File>
+    <File Include="bin/Web.Stage.config">
+      <publishTime>06/12/2020 16:06:58</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>04/21/2020 17:24:48</publishTime>
+    </File>
+    <File Include="index.html">
+      <publishTime>06/24/2020 14:34:16</publishTime>
+    </File>
+    <File Include="NLog.config">
+      <publishTime>06/30/2020 11:50:12</publishTime>
+    </File>
+    <File Include="Scripts/jquery-3.4.1.js">
+      <publishTime>04/21/2020 17:24:48</publishTime>
+    </File>
+    <File Include="Scripts/jquery-3.4.1.min.js">
+      <publishTime>04/21/2020 17:24:48</publishTime>
+    </File>
+    <File Include="Scripts/jquery-3.4.1.min.map">
+      <publishTime>04/21/2020 17:24:48</publishTime>
+    </File>
+    <File Include="Scripts/jquery-3.4.1.slim.js">
+      <publishTime>04/21/2020 17:24:48</publishTime>
+    </File>
+    <File Include="Scripts/jquery-3.4.1.slim.min.js">
+      <publishTime>04/21/2020 17:24:48</publishTime>
+    </File>
+    <File Include="Scripts/jquery-3.4.1.slim.min.map">
+      <publishTime>04/21/2020 17:24:48</publishTime>
+    </File>
+    <File Include="Scripts/jquery.signalR-2.4.1.js">
+      <publishTime>04/21/2020 17:24:48</publishTime>
+    </File>
+    <File Include="Scripts/jquery.signalR-2.4.1.min.js">
+      <publishTime>04/21/2020 17:24:48</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>07/21/2020 16:43:25</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

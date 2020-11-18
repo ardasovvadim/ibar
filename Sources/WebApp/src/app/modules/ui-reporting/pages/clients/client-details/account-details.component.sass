@@ -1,0 +1,79 @@
+@import "../../../../../../sass/general"
+
+h3
+  font-size: 1.2em
+  font-weight: normal
+  margin-bottom: 15px
+
+.form-group > mat-form-field
+  display: block
+
+.rank-block
+  display: flex
+  flex-direction: column
+  h3
+    margin-bottom: 25px
+  .rank
+    padding: 20px 45px
+    margin-bottom: 30px
+    &.rank-silver
+      background: $silver
+    &.rank-gold
+      background: $gold
+    &.rank-platinum
+      background: $platinum
+    p
+      margin: 0
+      font-size: 2rem
+      text-transform: uppercase
+      font-weight: bold
+      color: $white
+      text-align: center
+  .form-group
+    .form-control
+      padding: 5px 10px
+      width: 100%
+      min-width: 150px
+    .wrapper
+      .btn
+        margin-left: 10px
+      .form-control
+        width: auto
+      >*
+        display: inline-block
+
+.note-block
+  .btn-add-note i
+    vertical-align: top
+  .note
+    margin: 10px 0
+
+.btns-group
+  .col-sm-auto
+    margin-top: 10px
+  button:not(:last-of-type)
+    margin-right: 15px
+  .btn
+    margin-bottom: 15px
+    min-width: 150px
+
+@media (max-width: $sm)
+  .btns-group
+    .col-sm-auto
+      margin-top: 0
+    .col-sm-auto:first-of-type
+      margin-top: 10px
+    .btn
+      width: 100%
+
+
+.example-list
+  width: 500px
+  max-width: 100%
+  border: solid 1px #ccc
+  min-height: 60px
+  display: block
+  background: white
+  border-radius: 4px
+  overflow: hidden
+

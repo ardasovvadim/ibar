@@ -1,0 +1,82 @@
+<div class="row">
+
+  <div class="col-12 block btn-group">
+
+    <button mat-stroked-button (click)="addMasterAccount()">Add</button>
+    <button mat-stroked-button (click)="refreshData()">Refresh</button>
+
+  </div>
+
+  <div class="col-12 block">
+
+    <table mat-table [dataSource]="masterAccounts" class="mat-elevation-z4">
+
+      <!-- ToolBox -->
+      <ng-container matColumnDef="tools">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let masterAccount" class="cell-shrink btn-group">
+          <button mat-button
+                  class="btn--green"
+                  (click)="editMasterAccount(masterAccount)">Edit</button>
+          <button mat-button
+                  class="btn--red"
+                  (click)="deleteMasterAccount(masterAccount)">Remove</button>
+        </td>
+      </ng-container>
+
+      <!-- Number row Column -->
+      <ng-container matColumnDef="position">
+        <th mat-header-cell *matHeaderCellDef> No.</th>
+        <td mat-cell *matCellDef="let masterAccount; let i = index"> {{i+1}} </td>
+      </ng-container>
+
+      <!-- AccountName Column -->
+      <ng-container matColumnDef="accountName">
+        <th mat-header-cell *matHeaderCellDef>Account Name</th>
+        <td mat-cell *matCellDef="let masterAccount"> {{masterAccount.accountName | checkEmpty}} </td>
+      </ng-container>
+
+      <!-- Account Alias Column -->
+      <ng-container matColumnDef="accountAlias">
+        <th mat-header-cell *matHeaderCellDef>Account Alias</th>
+        <td mat-cell *matCellDef="let masterAccount"> {{masterAccount.accountAlias | checkEmpty}} </td>
+      </ng-container>
+
+      <!-- Created Date Column -->
+      <ng-container matColumnDef="createdDate">
+        <th mat-header-cell *matHeaderCellDef>Created Date</th>
+        <td mat-cell *matCellDef="let masterAccount"> {{masterAccount.createdDate | customDateTime}} </td>
+      </ng-container>
+
+      <!-- Created By Column -->
+      <ng-container matColumnDef="createdBy">
+        <th mat-header-cell *matHeaderCellDef>Created By</th>
+        <td mat-cell *matCellDef="let masterAccount"> {{masterAccount.createdBy | checkEmpty}} </td>
+      </ng-container>
+
+      <!-- Modified Date Column -->
+      <ng-container matColumnDef="modifiedDate">
+        <th mat-header-cell *matHeaderCellDef>Modified Date</th>
+        <td mat-cell *matCellDef="let masterAccount"> {{masterAccount.modifiedDate | customDateTime}} </td>
+      </ng-container>
+
+      <!-- Modified By Column -->
+      <ng-container matColumnDef="updatedBy">
+        <th mat-header-cell *matHeaderCellDef>Modified By</th>
+        <td mat-cell *matCellDef="let masterAccount"> {{masterAccount.updatedBy | checkEmpty}} </td>
+      </ng-container>
+
+      <!-- Amount Trade Accounts Column -->
+      <ng-container matColumnDef="amountTradeAccounts">
+        <th mat-header-cell *matHeaderCellDef>Amount Trade Accounts</th>
+        <td mat-cell *matCellDef="let masterAccount"> {{masterAccount.amountTradeAccounts}} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let masterAccount; columns: displayedColumns;"></tr>
+
+    </table>
+
+  </div>
+
+</div>

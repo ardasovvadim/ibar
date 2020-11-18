@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "mssql1": {
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroup')]/providers/Microsoft.Sql/servers/iba-reporting-srv/databases/IBAR.Master",
+      "type": "mssql.azure",
+      "connectionId": "TradeDbContext",
+      "secretStore": null
+    }
+  }
+}

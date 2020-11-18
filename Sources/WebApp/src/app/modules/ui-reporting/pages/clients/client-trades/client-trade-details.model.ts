@@ -1,0 +1,33 @@
+export class AccountTradesDetailsModel {
+  id: number;
+  quantity: number;
+  tradePrice: number;
+  closePrice: number;
+  volatilityOrderLink: number;
+  assetCategory: string;
+  putCall: string;
+  buySell: string;
+  description: string;
+  orderType: string;
+  orderReference: string;
+  currency: string;
+  ibExecId: string;
+  openCloseIndicator: string;
+  isin: string;
+  isAPIOrder: string;
+  multiplier: number;
+  transactionID: number;
+  ibOrderID: number;
+  fxRateToBase: number;
+  ibCommission: number;
+  conid: number;
+  strike: number;
+  taxes: number;
+  expiry: Date;
+  settleDateTarget: Date;
+  orderTime: Date;
+  reportDate: Date;
+  symbol: string;
+  listingExchange: string;
+  underlyingSymbol: string;
+}

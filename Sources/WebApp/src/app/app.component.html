@@ -1,0 +1,11 @@
+<div class="container-fluid" [ngClass]="{'p-0': !isCurrentUser}">
+  <header>
+    <app-nav-menu></app-nav-menu>
+  </header>
+  <main [ngClass]="{'layout-center': !isCurrentUser}">
+    <router-outlet></router-outlet>
+  </main>
+  <footer>
+    <app-footer></app-footer>
+  </footer>
+</div>

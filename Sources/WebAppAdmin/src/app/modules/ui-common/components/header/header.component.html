@@ -1,0 +1,18 @@
+<header>
+  <div class="row justify-content-center align-items-center logo-block">
+    <div class="col-auto">
+      <img src="img/mexem_logo.svg" class="logo" alt="">
+    </div>
+  </div>
+  <div class="row custom-toolbar justify-content-center">
+    <div class="col-auto btn-group">
+      <button mat-button routerLink="users">Users</button>
+      <button mat-button routerLink="masteraccounts">Master Accounts</button>
+<!--      <button mat-button routerLink="sources">Sources</button>-->
+<!--      <button mat-button routerLink="controls">Controls</button>-->
+      <button mat-button routerLink="analytics">Analytics</button>
+      <button mat-button routerLink="settings">Settings</button>
+      <button mat-button (click)="logout()">Log Out</button>
+    </div>
+  </div>
+</header>

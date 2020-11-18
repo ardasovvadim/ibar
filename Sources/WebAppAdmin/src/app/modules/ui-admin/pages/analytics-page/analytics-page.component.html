@@ -1,0 +1,79 @@
+<div class="row block">
+  <div class="col-12">
+    <div class="row filter-row">
+      <div class="col-auto">
+        <div class="filter">
+          <app-select-master-accounts (selectedChange)="masterAccountChanged($event)" [value]="selectedMasterAccountId"></app-select-master-accounts>
+        </div>
+        <div class="filter">
+          <app-select-ftp-credentials (selectedChange)="ftpCredentialChanged($event)" [value]="selectedFtpCredentialId"></app-select-ftp-credentials>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="w-100"></div>
+  <div class="col-3 d-flex flex-column justify-content-between">
+    <div class="card">
+      <h2>Source files for last day</h2>
+      <div class="p-row">
+        <p>Registered files:</p>
+        <p>{{cardInfo?.registeredFiles | checkEmpty}}</p>
+      </div>
+      <div class="p-row">
+        <p>Imported files:</p>
+        <p>{{cardInfo?.importedFiles | checkEmpty}}</p>
+      </div>
+    </div>
+    <div class="card">
+      <h2>Zoho files for last day</h2>
+      <div class="p-row">
+        <p>ZOHO files:</p>
+        <p>{{cardInfo?.zohoFiles | checkEmpty}}</p>
+      </div>
+      <div class="p-row">
+        <p>Sent ZOHO files:</p>
+        <p>{{cardInfo?.sentFiles | checkEmpty}}</p>
+      </div>
+    </div>
+    <hr>
+    <div class="card">
+      <h2>Last seen</h2>
+      <div class="p-row">
+        <p>Copy job:</p>
+        <p>{{cardInfo?.lastSeenCopyJob | customDateTime}}</p>
+      </div>
+      <div class="p-row">
+        <p>FTP job:</p>
+        <p>{{cardInfo?.lastSeenFtpJob | customDateTime}}</p>
+      </div>
+      <div class="p-row">
+        <p>Import job:</p>
+        <p>{{cardInfo?.lastSeenImportJob | customDateTime}}</p>
+      </div>
+      <div class="p-row">
+        <p>Zoho job:</p>
+        <p>{{cardInfo?.lastSeenZohoJob | customDateTime}}</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-9">
+    <div class="card">
+      <div class="row">
+        <div class="col-auto d-flex align-items-center ml-3">
+          <h2>Source files by period</h2>
+        </div>
+        <div class="col-auto ml-auto mr-3">
+          <app-date-range [startPeriod]="selectedPeriod" (selectedPeriodChanged)="selectedPeriodChanged($event)"></app-date-range>
+          <button mat-flat-button [disableRipple]="true" class="btn flat-btn--blue ml-4" [class.active]="selectedPeriod.name === 'week'" (click)="setSelectedPeriod('week')">Week</button>
+          <button mat-flat-button [disableRipple]="true" class="btn flat-btn--blue" [class.active]="selectedPeriod.name === 'month'" (click)="setSelectedPeriod('month')">Month</button>
+          <button mat-flat-button [disableRipple]="true" class="btn flat-btn--blue" [class.active]="selectedPeriod.name === 'year'" (click)="setSelectedPeriod('year')">Year</button>
+          <button mat-stroked-button class="ml-4" (click)="details()">Details</button>
+        </div>
+        <div class="w-100"></div>
+        <div class="col-12">
+          <app-analytics-chart [data]="chartData"></app-analytics-chart>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

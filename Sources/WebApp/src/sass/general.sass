@@ -1,0 +1,34 @@
+@import "properties"
+// general style for table
+@import "table"
+// custom style for different components
+@import "components"
+// forms and form components
+@import "form"
+// helper classes for layout
+@import "tools"
+
+// dialogs
+@import "dialog"
+
+// for datepicker
+@import 'datepicker'
+
+// COMPONENT DISPLAY
+app-nav-menu, app-nav-menu-sidebar, app-note, app-root, app-list, app-pie-block
+  position: relative
+  display: block
+
+app-period-picker
+  position: relative
+  display: inline-block
+
+html
+  font-size: 14px
+
+main
+  min-height: 100vh
+
+body
+  color: $f-color
+  overflow-x: hidden

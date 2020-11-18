@@ -1,0 +1,15 @@
+<div class="wrapper">
+  <h3>{{title}}</h3>
+  <app-period-picker [exceptPeriods]="exceptPeriods" [isInput]="false" (selectedPeriodChange)="onPeriodChange($event)"></app-period-picker>
+  <div class="chart">
+    <canvas baseChart
+            #chart
+            [data]="pieChartData"
+            [labels]="pieChartLabels"
+            [chartType]="pieChartType"
+            [options]="pieChartOptions"
+            [colors]="pieChartColors"
+            [legend]="pieChartLegend">
+    </canvas>
+  </div>
+</div>

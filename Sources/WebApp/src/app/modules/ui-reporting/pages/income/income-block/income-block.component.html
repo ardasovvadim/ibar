@@ -1,0 +1,16 @@
+ <div class="col-12 block">
+  <h3 class="CardName">{{title}}</h3>
+</div>
+<!--<div class="row pickers">-->
+<!--  <app-account-picker class="col-auto" (selectedMasterAccountChange)="onAccountChange($event)"></app-account-picker>-->
+<!--  <app-period-picker class="col-auto" (selectedPeriodChange)="onPeriodChange($event)"></app-period-picker>-->
+<!--</div>-->
+<div class="col-12">
+  <div class="bar-chart">
+    <app-bar-chart
+      [format]="chartFormat"
+      [chartData]="chartData.data"
+      [chartLabels]="chartData.labels">
+    </app-bar-chart>
+  </div>
+</div>

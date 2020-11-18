@@ -1,0 +1,37 @@
+<div class="row row-controls">
+
+  <div class="col-12">
+    <mat-tab-group animationDuration="0ms">
+      <mat-tab label="Ftp">
+        <ng-template matTabContent>
+          <app-job-control
+            [job]="jobEnum.Ftp">
+          </app-job-control>
+        </ng-template>
+      </mat-tab>
+      <mat-tab label="Copy">
+        <ng-template matTabContent>
+          <app-job-control
+            [job]="jobEnum.Copy">
+          </app-job-control>
+        </ng-template>
+      </mat-tab>
+      <mat-tab label="Extract">
+        <ng-template matTabContent>
+          <app-job-control
+            [job]="jobEnum.Extract">
+          </app-job-control>
+        </ng-template>
+      </mat-tab>
+      <mat-tab label="Import">
+        <ng-template matTabContent>
+          <app-job-control
+            [job]="jobEnum.Import">
+          </app-job-control>
+        </ng-template>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+
+
+</div>

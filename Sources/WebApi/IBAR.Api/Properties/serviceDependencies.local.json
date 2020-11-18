@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "mssql2": {
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroup')]/providers/Microsoft.Sql/servers/ib-analytics-sqlserver/databases/IBAR.Log",
+      "type": "mssql.azure",
+      "connectionId": "DBLoggerContext",
+      "secretStore": null
+    },
+    "mssql1": {
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroup')]/providers/Microsoft.Sql/servers/ib-analytics-sqlserver/databases/IBAR.Master",
+      "type": "mssql.azure",
+      "connectionId": "TradeDbContext",
+      "secretStore": null
+    }
+  }
+}

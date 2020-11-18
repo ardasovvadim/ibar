@@ -1,0 +1,35 @@
+.custom-form, .custom-form-block, .custom-form.p-0
+  & > .mat-form-field
+    display: block
+  .mat-form-field
+    padding-bottom: 5px
+    display: block
+    min-width: 300px
+  .mat-form-field + app-state-model-errors:not(:last-of-type)
+    padding-bottom: 10px
+  app-state-model-errors
+    text-align: left
+    width: auto
+    max-width: 100%
+    display: block
+  .mat-form-field-wrapper
+    padding-bottom: 0
+  .mat-form-field-appearance-legacy .mat-form-field-underline
+    bottom: 0
+  h1
+    margin: -24px -24px 0 -24px
+    padding: 24px 24px 15px 24px
+    font-weight: 500
+    background: $light-grey
+    border-bottom: $grey
+  form
+    margin-top: 30px
+  .btn-group
+    display: block
+    width: auto
+    border-top: 1px solid rgba(0, 0, 0, 0.12)
+    margin: 10px -24px -24px -24px
+    padding: 15px 24px
+    text-align: right
+    .mat-button:not(:last-of-type)
+      margin-right: 15px

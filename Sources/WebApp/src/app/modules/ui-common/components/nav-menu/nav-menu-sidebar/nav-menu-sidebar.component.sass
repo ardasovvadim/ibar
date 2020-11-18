@@ -1,0 +1,75 @@
+@import "general"
+
+@media (min-width: $breakpoint-menu)
+  .nav-menu-col.nav-menu-col--up.hidden
+    transform: translateX(0px)
+  .nav-menu-btn
+    display: none
+
+.nav-menu
+  &-col
+    position: fixed
+    top: 0
+    left: 0
+    display: flex
+    flex-direction: column
+    transition: all .4s
+    &.hidden
+      transform: translateX(-$nav-menu-width-collapse)
+    &--up
+      width: $nav-menu-width-collapse
+      z-index: 99
+      .nav-menu-top
+        width: $nav-menu-width-collapse
+      .nav-menu-body
+        font-size: 1.25rem
+        text-transform: uppercase
+      .nav-menu-li:first-of-type
+          margin-top: 12px
+    &--bottom
+      z-index: 98
+      .nav-menu-li:first-of-type
+        margin-top: 12px
+  &-top
+    height: $nav-menu-height
+    background: $dark-grey
+  &-btn
+    width: 50px
+    height: $nav-menu-height
+    background: $dark-grey
+    border-radius: unset
+    color: $white
+    font-size: 1.5rem
+  &-body
+    background: $light-grey
+    height: calc(100vh - #{$nav-menu-height})
+  &-li
+    position: relative
+    display: flex
+    padding: 12px 12px
+    user-select: none
+    &:focus
+      outline: none
+      border: none
+    input
+      border-color: $f-color
+    p
+      margin: 0 0 0 20px
+    i
+      color: $f-color
+      font-size: 1.5rem
+      img
+        display: inline-block
+        width: 100%
+        height: auto
+        fill: red
+    .wrapper
+      width: 25px
+      text-align: center
+    &:hover
+      background: $grey
+      transition: all .2s
+    &.active
+      background: $grey
+
+

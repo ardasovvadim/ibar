@@ -1,0 +1,64 @@
+@import "src/sass/general"
+
+
+.nav-menu
+  background: $white
+  margin-left: $nav-menu-width
+  position: relative
+  min-height: $nav-menu-height
+  border-bottom: $border-grey-style
+  align-items: center
+  padding: 5px 0 10px 0
+  &-title h1
+    color: $f-color
+    font-size: 2.1rem
+    margin-bottom: 5px
+    font-weight: normal
+  &-search
+    display: flex
+    .btn
+      margin-right: 10px
+    i
+      font-size: 1.3em
+  &-user-block
+    display: flex
+    margin-left: auto
+    padding-right: 30px
+    padding-left: 0
+    text-align: right
+    .wrapper
+      margin: auto 0
+    .user-name
+      text-transform: uppercase
+    .user-settings
+      font-weight: lighter
+    a
+      display: block
+    .circle
+      margin-left: 10px
+      color: $dark-grey
+      min-width: $min-radius-user-image
+      min-height: $min-radius-user-image
+      border-radius: 50%
+      border: 2px solid $dark-grey
+      background: transparent
+      @extend .layout-center
+      i
+        font-size: 2rem
+
+app-exception-header
+  display: block
+  &.ml
+    margin-left: $nav-menu-width
+
+@media (max-width: $md)
+  .nav-menu-accounts
+    display: none
+  .nav-menu-period-picker
+    display: none
+
+@media (min-width: $breakpoint-menu)
+  .nav-menu
+    margin-left: $nav-menu-width-collapse
+  app-exception-header.ml
+    margin-left: $nav-menu-width-collapse

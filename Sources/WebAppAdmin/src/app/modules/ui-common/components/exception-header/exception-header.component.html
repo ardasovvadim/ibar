@@ -1,0 +1,22 @@
+<div class="exception-container row" *ngIf="exceptions.length > 0">
+  <p *ngIf="exceptions[0].header">{{exceptions[0].header}}</p>
+  <p *ngIf="exceptions[0].guid">Internal Server Error {{exceptions[0].guid}}. Please, send report to the support team</p>
+  <ng-container *ngIf="exceptions[0].messages && exceptions[0].messages.length > 0">
+    <p *ngFor="let message of exceptions[0].messages">{{message}}</p>
+  </ng-container>
+  <div class="btns-group"
+       [matBadge]="exceptions.length"
+       matBadgeColor="accent"
+       [matBadgeHidden]="exceptions.length === 1">
+    <button class="btn"
+            type="button"
+            *ngIf="exceptions[0].isReportButton"
+            [matTooltip]="exceptions[0].sent ? 'Report has been sent' :
+                                     sending ? 'Sending' : 'Send report to support team'"
+            (click)="sendReport(exceptions[0]);"><i class="fas fa-share"></i></button>
+    <button class="btn"
+            type="button"
+            matTooltip="Close message"
+            (click)="close()"><i class="fas fa-times"></i></button>
+  </div>
+</div>

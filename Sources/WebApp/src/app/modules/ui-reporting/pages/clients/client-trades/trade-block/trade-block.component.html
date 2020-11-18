@@ -1,0 +1,151 @@
+<form class="row">
+  <div>
+    <hr>
+    <div class="col-12 mb-2">
+      <p>Record: {{index}}</p>
+    </div>
+
+    <div class="col-auto" >
+    <mat-form-field class="mat-form-field" appearance="outline">
+      <mat-label>Date</mat-label>
+      <input matInput type="text" class="mat-input" [value]="dataDetails.reportDate | date:'yyyy-MM-dd'" readonly> <!--placeholder="Date"-->
+    </mat-form-field>
+    <mat-form-field class="mat-form-field" appearance="outline">
+      <mat-label>Symbol</mat-label>
+      <input matInput type="text" class="mat-input" placeholder="Symbol" [value]="dataDetails.symbol" readonly>
+    </mat-form-field>
+    <mat-form-field class="mat-form-field" appearance="outline">
+      <mat-label>Quantity</mat-label>
+      <input matInput type="text" class="mat-input" placeholder="Quantity" [value]="dataDetails.quantity" readonly>
+    </mat-form-field>
+    <mat-form-field class="mat-form-field" appearance="outline">
+      <mat-label>TradePrice</mat-label>
+      <input matInput type="text" class="mat-input" placeholder="TradePrice" [value]="dataDetails.tradePrice" readonly>
+    </mat-form-field>
+    <mat-form-field class="mat-form-field" appearance="outline">
+      <mat-label>Close price</mat-label>
+      <input matInput type="text" class="mat-input" placeholder="Close price" [value]="dataDetails.closePrice" readonly>
+    </mat-form-field>
+  </div>
+<!--  <div class="col-auto ml-auto">-->
+<!--    <mat-form-field class="mat-form-field" appearance="outline">-->
+<!--      <mat-label>Position value</mat-label>-->
+<!--      <input matInput type="text" class="mat-input" placeholder="Position value" [value]="tradeData.">-->
+<!--    </mat-form-field>-->
+<!--    <mat-form-field class="mat-form-field" appearance="outline">-->
+<!--      <mat-label>Realized PL</mat-label>-->
+<!--      <input matInput type="text" class="mat-input" placeholder="Realized PL" [value]="tradeData.realizedPL">-->
+<!--    </mat-form-field>-->
+<!--  </div>-->
+  <div class="col-12">
+    <mat-form-field class="mat-form-field" appearance="outline">
+      <mat-label>Description</mat-label>
+      <input matInput type="text" class="mat-input" placeholder="Description" [value]="dataDetails.description" readonly>
+    </mat-form-field>
+    <mat-form-field class="mat-form-field" appearance="outline">
+      <mat-label>AssetCategory</mat-label>
+      <input matInput type="text" class="mat-input" placeholder="AssetCategory" [value]="dataDetails.assetCategory" readonly>
+    </mat-form-field>
+    <mat-form-field class="mat-form-field" appearance="outline">
+      <mat-label>ListingExcange</mat-label>
+      <input matInput type="text" class="mat-input" placeholder="ListingExcange" [value]="dataDetails.listingExchange" readonly>
+    </mat-form-field>
+    <mat-form-field class="mat-form-field" appearance="outline">
+      <mat-label>Currency</mat-label>
+      <input matInput type="text" class="mat-input" placeholder="Currency" [value]="dataDetails.currency" readonly>
+    </mat-form-field>
+    <mat-form-field class="mat-form-field" appearance="outline">
+      <mat-label>ISIN</mat-label>
+      <input matInput type="text" class="mat-input" placeholder="ISIN" [value]="dataDetails.isin" readonly>
+    </mat-form-field>
+    <mat-form-field class="mat-form-field" appearance="outline">
+      <mat-label>CONID</mat-label>
+      <input matInput type="text" class="mat-input" placeholder="CONID" [value]="dataDetails.conid" readonly>
+    </mat-form-field>
+    <mat-form-field class="mat-form-field" appearance="outline">
+      <mat-label>FXtobase</mat-label>
+      <input matInput type="text" class="mat-input" placeholder="FXtobase" [value]="dataDetails.fxRateToBase" readonly>
+    </mat-form-field>
+  </div>
+  <div class="col-12">
+    <mat-form-field class="mat-form-field" appearance="outline">
+      <mat-label>Undersymbol</mat-label>
+      <input matInput type="text" class="mat-input" placeholder="Undersymbol" [value]="dataDetails.underlyingSymbol" readonly>
+    </mat-form-field>
+    <mat-form-field class="mat-form-field" appearance="outline">
+      <mat-label>P/C</mat-label>
+      <input matInput type="text" class="mat-input" placeholder="P/C" [value]="dataDetails.putCall" readonly>
+    </mat-form-field>
+    <mat-form-field class="mat-form-field" appearance="outline">
+      <mat-label>Multi</mat-label>
+      <input matInput type="text" class="mat-input" placeholder="Multi" [value]="dataDetails.multiplier" readonly>
+    </mat-form-field>
+    <mat-form-field class="mat-form-field" appearance="outline">
+      <mat-label>Strike</mat-label>
+      <input matInput type="text" class="mat-input" placeholder="Strike" [value]="dataDetails.strike" readonly>
+    </mat-form-field>
+    <mat-form-field class="mat-form-field" appearance="outline">
+      <mat-label>Expiry</mat-label>
+      <input matInput type="text" class="mat-input" placeholder="Expiry" [value]="dataDetails.expiry | date:'yyyy-MM-dd'" readonly>
+    </mat-form-field>
+  </div>
+  <div class="col-12">
+    <mat-form-field class="mat-form-field" appearance="outline">
+      <mat-label>Settle date</mat-label>
+      <input matInput type="text" class="mat-input" placeholder="Settle date" [value]="dataDetails.settleDateTarget | date:'yyyy-MM-dd'" readonly>
+    </mat-form-field>
+    <mat-form-field class="mat-form-field" appearance="outline">
+      <mat-label>Taxes</mat-label>
+      <input matInput type="text" class="mat-input" placeholder="Taxes" [value]="dataDetails.taxes" readonly>
+    </mat-form-field>
+    <mat-form-field class="mat-form-field" appearance="outline">
+      <mat-label>IB Commission</mat-label>
+      <input matInput type="text" class="mat-input" placeholder="IB Commission" [value]="dataDetails.ibCommission" readonly>
+    </mat-form-field>
+    <mat-form-field class="mat-form-field" appearance="outline">
+      <mat-label>Open/Close</mat-label>
+      <input matInput type="text" class="mat-input" placeholder="Open/Close" [value]="dataDetails.openCloseIndicator" readonly>
+    </mat-form-field>
+  </div>
+  <div class="col-12">
+    <mat-form-field class="mat-form-field" appearance="outline">
+      <mat-label>Transaction ID</mat-label>
+      <input matInput type="text" class="mat-input" placeholder="Transaction ID" [value]="dataDetails.transactionID" readonly>
+    </mat-form-field>
+    <mat-form-field class="mat-form-field" appearance="outline">
+      <mat-label>IB Order ID</mat-label>
+      <input matInput type="text" class="mat-input" placeholder="IB Order ID" [value]="dataDetails.ibOrderID" readonly>
+    </mat-form-field>
+    <mat-form-field class="mat-form-field width" appearance="outline" style="width: auto">
+      <mat-label>IB EXE ID</mat-label>
+      <input matInput type="text" class="mat-input" placeholder="IB EXE ID" [value]="dataDetails.ibExecId" readonly>
+    </mat-form-field>
+    <mat-form-field class="mat-form-field width" appearance="outline" style="width: auto" readonly>
+      <mat-label>Order Refer</mat-label>
+      <input matInput type="text" class="mat-input width" placeholder="Order Refer" [value]="dataDetails.orderReference" readonly>
+    </mat-form-field>
+    <mat-form-field class="mat-form-field" appearance="outline">
+      <mat-label>Vol Order</mat-label>
+      <input matInput type="text" class="mat-input" placeholder="Vol Order" [value]="dataDetails.volatilityOrderLink" readonly>
+    </mat-form-field>
+  </div>
+  <div class="col-12">
+    <mat-form-field class="mat-form-field" appearance="outline">
+      <mat-label>Order Time</mat-label>
+      <input matInput type="text" class="mat-input" placeholder="Order Time" [value]="dataDetails.orderTime| date:'yyyy-MM-dd hh:MM:ss'" readonly>
+    </mat-form-field>
+    <mat-form-field class="mat-form-field" appearance="outline">
+      <mat-label>Order Type</mat-label>
+      <input matInput type="text" class="mat-input" placeholder="Order Type" [value]="dataDetails.orderType" readonly>
+    </mat-form-field>
+    <mat-form-field class="mat-form-field" appearance="outline">
+      <mat-label>Buy Sell</mat-label>
+      <input matInput type="text" class="mat-input" placeholder="Buy Sell" [value]="dataDetails.buySell" readonly>
+    </mat-form-field>
+    <mat-form-field class="mat-form-field" appearance="outline">
+      <mat-label>API Order</mat-label>
+      <input matInput type="text" class="mat-input" placeholder="API Order" [value]="dataDetails.isAPIOrder" readonly>
+    </mat-form-field>
+  </div>
+  </div>
+</form>

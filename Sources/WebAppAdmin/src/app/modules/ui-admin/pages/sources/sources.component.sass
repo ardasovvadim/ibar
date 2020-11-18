@@ -1,0 +1,60 @@
+@import "custom-theme"
+@import '~saturn-datepicker/theming'
+@include sat-datepicker-theme($WebAppAdmin-theme)
+@import "components"
+
+
+.search-field
+  min-width: 350px
+
+.tools
+  >*
+    display: inline-block
+    margin-right: 30px
+  .created-filter mat-checkbox
+    margin-right: 10px
+  .btn--icon
+    opacity: .65
+  //.search-field
+
+.row
+  width: 100%
+  padding: 0 15px
+
+
+.overflow-wrapper
+  overflow: auto
+
+table td
+  white-space: nowrap
+
+.overflow-cell
+  overflow: auto
+  max-width: 500px
+  &:hover::-webkit-scrollbar-thumb
+    background-color: rgba(0, 0, 0, 0.1)
+  &::-webkit-scrollbar
+    height: 5px
+  &::-webkit-scrollbar-button
+    display: none
+  &::-webkit-scrollbar-track
+    background: rgba(0, 0, 0, 0)
+  &::-webkit-scrollbar-thumb
+    background-color: rgba(0, 0, 0, 0)
+    border-radius: 15px
+
+//.sourcesTable tr .btn
+//  opacity: 0
+//  transition: opacity .2s
+//.sourcesTable tr:hover .btn
+//  opacity: 1
+
+.status--success
+  color: $green
+.status--failed
+  color: $red
+.status--waiting
+  color: $blue
+
+.align-center
+  text-align: center

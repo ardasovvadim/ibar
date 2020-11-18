@@ -1,0 +1,6 @@
+<mat-form-field>
+  <mat-label>Master account:</mat-label>
+  <mat-select [(value)]="selectedMasterAccount" (selectionChange)="onSelectedChange()">
+    <mat-option *ngFor="let acc of masterAccounts" [value]="acc">{{acc.name}}</mat-option>
+  </mat-select>
+</mat-form-field>

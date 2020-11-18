@@ -1,0 +1,121 @@
+<div class="row">
+
+  <div class="col-12 block btn-group tools">
+
+    <button mat-stroked-button (click)="goBack()">Go back</button>
+
+    <mat-form-field class="search-field">
+      <mat-label>Filter by file name</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Enter file name">
+    </mat-form-field>
+
+    <div class="created-filter">
+      <app-date-range [disabled]="!isActiveDateCreatedFilter"
+                      [startPeriod]="period"
+                      (selectedPeriodChanged)="selectedDateRangeChanged($event)">
+      </app-date-range>
+    </div>
+
+    <mat-checkbox #createdDateCheckBox
+                  [matTooltip]="createdDateCheckBox.checked ? 'Disable filter' : 'Enable filter'"
+                  [checked]="isActiveDateCreatedFilter"
+                  (change)="onChangeIsActiveDateCreatedFilter($event)">Created date filter
+    </mat-checkbox>
+
+    <button mat-icon-button
+            matTooltip="Refresh data"
+            (click)="refreshData()" class="btn--icon">
+      <i class="fas fa-redo-alt"></i>
+    </button>
+
+  </div>
+
+  <div class="col-12 mat-elevation-z4">
+
+    <div class="overflow-wrapper">
+      <table #table mat-table [dataSource]="data" matSort (matSortChange)="onSortChange($event)" class="sourcesTable">
+
+        <!-- ToolBox -->
+        <ng-container matColumnDef="tools">
+          <th mat-header-cell *matHeaderCellDef></th>
+          <td mat-cell *matCellDef="let file" class="cell-shrink">
+            <button mat-button
+                    class="btn btn--green"
+                    (click)="download(file)">Download
+            </button>
+          </td>
+        </ng-container>
+
+        <!-- Id Column -->
+        <ng-container matColumnDef="position">
+          <th mat-header-cell *matHeaderCellDef>No.</th>
+          <td mat-cell *matCellDef="let file; let i = index"
+              class="cell-shrink">{{(i + 1) + displayPageIndex * pageLength}}</td>
+        </ng-container>
+
+        <!-- File Name Column -->
+        <ng-container matColumnDef="fileName">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>File name</th>
+          <td mat-cell *matCellDef="let file">{{file.fileName}}</td>
+        </ng-container>
+
+        <!-- Relative Path Column -->
+        <ng-container matColumnDef="relativePath">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Relative path</th>
+          <td mat-cell *matCellDef="let file" class="overflow-cell">{{file.relativePath}}</td>
+        </ng-container>
+
+        <!-- Date of File Column -->
+        <ng-container matColumnDef="dateOfFile">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Date of file</th>
+          <td mat-cell *matCellDef="let file">{{file.dateOfFile | customDate}}</td>
+        </ng-container>
+
+        <!-- Date of the processing Column -->
+        <ng-container matColumnDef="dateOfTheProcessing">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Processing date</th>
+          <td mat-cell *matCellDef="let file">{{file.dateOfTheProcessing | customDate}}</td>
+        </ng-container>
+
+        <!-- File State Column -->
+        <ng-container matColumnDef="fileState">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>State</th>
+          <td mat-cell *matCellDef="let file">{{resolveFileStateName(file.fileState)}}</td>
+        </ng-container>
+
+        <!-- Upload to ZOHO -->
+        <ng-container matColumnDef="isSent">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Sent To ZOHO</th>
+          <td mat-cell *matCellDef="let file" [class.status--success]="file.isForApi && file.isSent"
+              [class.status--waiting]="file.isForApi && !file.isSent ">{{resolveIsSentToApi(file)}}</td>
+        </ng-container>
+
+        <!-- File Status Column -->
+        <ng-container matColumnDef="fileStatus">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Status</th>
+          <td mat-cell *matCellDef="let file" [class.status--success]="file.fileStatus == fileStatusEnum.SUCCESS ||
+          file.fileStatus == fileStatusEnum.NONE"
+              [class.status--failed]="file.fileStatus == fileStatusEnum.FAILED">{{resolveFileStatusName(file)}}</td>
+        </ng-container>
+
+        <!-- File Exception Column -->
+        <ng-container matColumnDef="exception">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Error</th>
+          <td mat-cell *matCellDef="let file">{{file.exception}}</td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let file; columns: displayedColumns;"></tr>
+
+      </table>
+    </div>
+
+    <app-custom-pagination [pageIndex]="pageIndex"
+                           [pageLength]="pageLength"
+                           [dataLength]="dataLength"
+                           [blockChangePage]="isLoading"
+                           (pageChangeEvent)="onChangePage($event)">
+    </app-custom-pagination>
+
+  </div>
+</div>

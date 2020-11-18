@@ -1,0 +1,69 @@
+<div class="row">
+
+  <div class="col-12">
+    <h3>Recent Accounts</h3>
+  </div>
+
+  <div class="col-12">
+    <table #table mat-table matSort
+           [matSortActive]="matSortActive"
+           [matSortDirection]="matSortDirection"
+           [dataSource]="tableData"
+           (matSortChange)="onSortChange($event)"
+           class="w-100 table table--striped">
+
+      <!-- ToolBox -->
+      <ng-container matColumnDef="tools">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let acc" class="cell-shrink">
+          <div class="btn btn--d-grey" (click)="goToDetails(acc)">Details</div>
+        </td>
+      </ng-container>
+
+      <!-- Account Name Column -->
+      <ng-container matColumnDef="accountName">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
+        <td mat-cell *matCellDef="let acc" class="cell-header">{{resolveName(acc)}}</td>
+      </ng-container>
+
+      <!-- Date Funded Column -->
+      <ng-container matColumnDef="dateFunded">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Date Funded</th>
+        <td mat-cell *matCellDef="let acc">{{dateToString(acc)}}</td>
+      </ng-container>
+
+      <!-- Mobile Column -->
+      <ng-container matColumnDef="mobile">
+        <th mat-header-cell *matHeaderCellDef>Mobile</th>
+        <td mat-cell *matCellDef="let acc">{{acc.mobile}}</td>
+      </ng-container>
+
+      <!-- City Column -->
+      <ng-container matColumnDef="city">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>City</th>
+        <td mat-cell *matCellDef="let acc">{{acc.city}}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let file; columns: displayedColumns;"></tr>
+
+    </table>
+  </div>
+
+  <div class="col-12">
+    <app-custom-pagination [pageIndex]="pageIndex"
+                           [pageLength]="pageLength"
+                           [dataLength]="dataLength"
+                           [pageSizeOptions]="pageSizeOptions"
+                           (pageChangeEvent)="onChangePage($event)">
+    </app-custom-pagination>
+  </div>
+
+  <div class="col-auto">
+
+    <app-new-clients-chart [pieChartData]="chartData.data[0].data" [pieChartLabels]="chartData.labels">
+    </app-new-clients-chart>
+
+  </div>
+
+</div>

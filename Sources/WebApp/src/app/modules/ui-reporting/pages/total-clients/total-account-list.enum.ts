@@ -1,0 +1,8 @@
+export enum TotalAccountListEnum {
+    CITY_LIST,
+    COUNTRY_LIST,
+    ACCOUNT_CAPABILITIES_LIST,
+    ACCOUNT_TYPE_LIST,
+    IB_ENTITY_LIST,
+    BASE_CURRENCY_LIST,
+}

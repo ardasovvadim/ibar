@@ -1,0 +1,70 @@
+@import "general"
+
+@media (max-width: 1335px)
+  .periods-list.adaptive
+    display: none
+
+@media (max-width: 1335px)
+  div.period-dropdown
+    display: block
+
+.period-dropdown
+  display: none
+
+.wrapper
+  position: relative
+  @extend .content-center
+  .date-picker-toggle
+    position: absolute
+    right: 7px
+    transform-origin: right center
+  input
+    padding-right: 32px
+    width: 185px
+    background: transparent
+    &:focus
+      outline: none
+      box-shadow: none
+      border-color: inherit
+
+.btn.date-picker-toggle
+  color: $f-color
+  font-size: 1.2rem
+  padding: 5px
+  margin-left: 10px
+  height: 100%
+  vertical-align: middle
+  transition: all .2s
+  &:hover
+    color: $dark-grey
+
+
+//::ng-deep .mat-calendar-body
+//  tr
+//    td:nth-child(1)
+//      .mat-calendar-body-cell-content
+//        color: red !important
+//
+//::ng-deep .mat-calendar-body
+// tr
+//  td:nth-child(7)
+//    .mat-calendar-body-cell-content
+//     color: red !important
+
+
+.periods-list
+    margin-left: 15px
+    margin-top: auto
+    margin-bottom: auto
+    .col-auto
+      padding: 0
+    a
+      display: inline-block
+      color: $dark-grey
+      cursor: pointer
+      &:hover
+        text-decoration: underline
+      &:nth-last-of-type(n+2)
+        padding-right: 5px
+        margin-right: 5px
+        border-right: $border-dark-grey-style

@@ -1,0 +1,23 @@
+//.mat-calendar-cell-semi-selected
+//  background: blue
+//.mat-calendar-body-semi-selected
+//  background: red
+@import "properties"
+@import "tools"
+@import "forms"
+@import "components"
+@import "table"
+//@import "console"
+
+body
+  margin: 0
+  overflow-x: hidden
+
+*, ::after, ::before
+  box-sizing: border-box
+
+
+
+.cdk-overlay-container > .cdk-global-overlay-wrapper:first-of-type
+  z-index: 1002
+

@@ -1,0 +1,139 @@
+@import "src/sass/general"
+
+$font-size-list-li: 1.2rem
+
+.example-container
+  max-height: 360px
+  overflow-y: auto
+  overflow-x: hidden
+
+
+.table th, .table td
+  border: none
+
+.table
+  min-height: 360px
+  position: relative
+  color: $f-color
+  margin: 0
+  th
+    padding: 0 10px 10px 10px
+    font-weight: normal
+    min-width: 100px
+    vertical-align: bottom
+  td
+    min-width: 100px
+    vertical-align: middle
+    padding: 15px
+    p
+      margin: 0
+      display: block
+    .value
+      text-transform: uppercase
+      font-weight: 500
+      font-size: 1.75rem
+      margin-right: 5px
+  tr
+    mat-row
+      line-height: 5px
+    td:first-of-type
+      h3
+        margin: 0
+        text-transform: uppercase
+      p
+        margin-top: .5rem
+        border-bottom: $border-grey-style
+        border-left: $border-grey-style
+        border-right: $border-grey-style
+  thead tr
+    border-right: none
+    border-left: none
+  .btn:nth-last-of-type(n+2)
+    margin-right: 10px
+  .toolbar
+    right: 10px
+    bottom: 10px
+    i
+      font-size: 1.4rem
+
+
+.table.table--striped
+  margin: 0
+  .mat-cell
+    color: $f-color
+  th
+    padding: 15px
+  tbody
+    border: $border-grey-style
+  tr
+    &:nth-of-type(2n)
+      background: #FBFBFB
+    td.cell-header
+      font-size: 1.5rem
+      font-weight: 500
+      padding-left: 20px
+    td.cell-shrink
+      padding: 0 20px
+      white-space: nowrap
+      width: 1%
+  tr, td
+    border: none
+
+::-webkit-scrollbar
+  padding-top: 20%
+  width: 10px
+  max-height: 6px
+
+::-webkit-scrollbar-track
+  box-shadow: inset 0 0 5px grey
+  border-radius: 10px
+
+::-webkit-scrollbar-thumb
+  background: dimgrey
+  border-radius: 10px
+
+::-webkit-scrollbar-thumb:hover
+  background: black
+
+
+.list-block
+  color: $f-color
+  margin-top: 15px
+
+  .list-title
+    text-transform: uppercase
+    h3
+      margin-bottom: 10px
+  .list-body
+    padding: 20px 40px 20px 40px
+    border: $border-grey-style
+    font-size: $font-size-list-li
+    position: relative
+    overflow-y: auto
+    max-height: 400px
+    .list-li
+      display: flex
+      position: relative
+      &:not(:last-of-type):before
+        display: block
+        content: ''
+        position: absolute
+        top: 11px
+        left: -17px
+        height: 100%
+        width: 1px
+        background: $grey
+      &:after
+        display: block
+        content: ''
+        position: absolute
+        width: 8px
+        height: 8px
+        border-radius: 50%
+        background: $grey
+        top: calc(#{$font-size-list-li / 2})
+        left: -20px
+      .list-li-name
+        margin-right: 20px
+      .list-li-value
+        margin-left: auto

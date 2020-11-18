@@ -1,0 +1,130 @@
+<div class="row align-items-start justify-content-center align-items-stretch">
+  <app-card
+    class="col-lg-4 col-md-6"
+    title="Total income"
+    iconClass="fas fa-coins"
+    isClickable="true"
+    (click)="onClickCard(cardType.TOTAL_INCOME); chartFormat = 'money'"
+    [chartType]="cardType.TOTAL_INCOME"
+    [totalValue]="totals[cardType.TOTAL_INCOME]">
+  </app-card>
+  <app-card
+    class="col-lg-4 col-md-6"
+    title="Total clients"
+    iconClass="fas fa-users"
+    format="string"
+    isClickable="true"
+    (click)="onClickCard(cardType.TOTAL_CLIENTS); chartFormat = 'string'"
+    [chartType]="cardType.TOTAL_CLIENTS"
+    [totalValue]="totals[cardType.TOTAL_CLIENTS]">
+  </app-card>
+  <app-card
+    class="col-lg-4 col-md-6"
+    title="Total aum"
+    iconClass="fas fa-tag"
+    (click)="onClickCard(cardType.TOTAL_AUM); chartFormat = 'money'"
+    [chartType]="cardType.TOTAL_AUM"
+    [totalValue]="totals[cardType.TOTAL_AUM]">
+  </app-card>
+  <div class="col-12 block">
+    <h3 class="CardName">{{resolveCardName()}}</h3>
+  </div>
+
+  <div class="col-12">
+    <div class="bar-chart">
+      <app-bar-chart
+        [format]="chartFormat"
+        [chartData]="chartData.data"
+        [chartLabels]="chartData.labels">
+      </app-bar-chart>
+    </div>
+  </div>
+
+  <app-card
+    class="col-lg-4 col-md-6"
+    [title]="'Avg income/clients'"
+    [iconClass]="'fas fa-users'"
+    [chartType]="cardType.AVG_INCOME_CLIENT"
+    [totalValue]="totals[cardType.AVG_INCOME_CLIENT]">
+  </app-card>
+  <app-card
+    class="col-lg-4 col-md-6"
+    [title]="'Avg account size'"
+    [iconClass]="'fas fa-coins'"
+    [chartType]="cardType.AVG_ACCOUNT_SIZE"
+    [totalValue]="totals[cardType.AVG_ACCOUNT_SIZE]">
+  </app-card>
+  <app-card
+    class="col-lg-4 col-md-6"
+    [title]="'Avg daily income'"
+    [iconClass]="'fas fa-chart-line'"
+    [chartType]="cardType.AVG_DAILY_INCOME"
+    [totalValue]="totals[cardType.AVG_DAILY_INCOME]">
+  </app-card>
+  <app-card
+    class="col-lg-4 col-md-6"
+    [title]="'Deposits'"
+    [iconClass]="'fas fa-coins'"
+    [chartType]="cardType.DEPOSITS"
+    [totalValue]="totals[cardType.DEPOSITS]">
+  </app-card>
+  <app-card
+    class="col-lg-4 col-md-6"
+    [title]="'Withdrawals'"
+    [iconClass]="'fas fa-coins'"
+    [chartType]="cardType.WITHDRAWALS"
+    [totalValue]="totals[cardType.WITHDRAWALS]">
+  </app-card>
+  <app-card
+    class="col-lg-4 col-md-6"
+    [title]="'D/W BALANCE'"
+    [iconClass]="'fas fa-coins'"
+    [chartType]="cardType.DW_BALANCE"
+    [totalValue]="totals[cardType.DW_BALANCE]">
+  </app-card>
+  <app-card
+    class="col-lg-4 col-md-6"
+    [title]="'Total stocks'"
+    [iconClass]="'fas fa-coins'"
+    [chartType]="cardType.TOTAL_STOCKS"
+    [totalValue]="totals[cardType.TOTAL_STOCKS]">
+  </app-card>
+  <app-card
+    class="col-lg-4 col-md-6"
+    [title]="'Total options'"
+    [iconClass]="'fas fa-coins'"
+    [chartType]="cardType.TOTAL_OPTIONS"
+    [totalValue]="totals[cardType.TOTAL_OPTIONS]">
+  </app-card>
+  <app-card
+    class="col-lg-4 col-md-6"
+    [title]="'Total futures'"
+    [iconClass]="'fas fa-coins'"
+    [chartType]="cardType.TOTAL_FUTURES"
+    [totalValue]="totals[cardType.TOTAL_FUTURES]">
+  </app-card>
+  <app-card
+    format="string"
+    class="col-lg-4 col-md-6"
+    [title]="'Total new clients'"
+    [iconClass]="'fas fa-users'"
+    [chartType]="cardType.TOTAL_NEW_CLIENTS"
+    [totalValue]="totals[cardType.TOTAL_NEW_CLIENTS]">
+  </app-card>
+  <app-card
+    format="string"
+    class="col-lg-4 col-md-6"
+    [title]="'Total abandoment'"
+    [iconClass]="'fas fa-users'"
+    [chartType]="cardType.TOTAL_ABANDOMENT"
+    [totalValue]="totals[cardType.TOTAL_ABANDOMENT]">
+  </app-card>
+  <app-card
+    format="string"
+    class="col-lg-4 col-md-6"
+    [title]="'Net change in clients'"
+    [iconClass]="'fas fa-users'"
+    [chartType]="cardType.NET_CHANGE_IN_CLIENTS"
+    [totalValue]="totals[cardType.NET_CHANGE_IN_CLIENTS]">
+  </app-card>
+</div>
